@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Login from "./pages/Login";
+import RegisterData from "./pages/RegisterData";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+            <Route path="/registerdata" element={<RegisterData />} />
         </Routes>
       </Router>
     </div>
