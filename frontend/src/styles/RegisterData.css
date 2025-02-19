@@ -1,33 +1,27 @@
 /* General Page Styling */
-.login-container {
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f4e5ff; /* Light purple background */
-  font-family: "Arial", sans-serif;
+  background-color: #f4e5ff;
+  font-family: "Inter", sans-serif;
 }
 
 /* Logo */
 .logo {
+  width: 200px;
+  margin-bottom: 0.5px;
   border-radius: 10px;
-  width: 120px;
-  margin-bottom: 20px;
 }
 
-/* Title and Subtitle */
+/* Title */
 h2 {
   font-size: 26px;
   font-weight: bold;
   color: #222;
-  margin-bottom: 5px;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 /* Form Styling */
@@ -35,7 +29,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 350px; /* Set fixed width for all elements */
+  max-width: 350px;
 }
 
 /* Input Fields */
@@ -85,23 +79,23 @@ button:hover {
 
 .separator span {
   flex: 1;
-  height: 1px;
+  height: 1.5px;
   background: #8a4ddf;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
-/* Sign-up Link */
-.signup-text {
+/* Log-in Link */
+.login-text {
   font-size: 14px;
   color: #555;
 }
 
-.signup-text a {
+.login-text a {
   color: #8a4ddf;
   font-weight: bold;
   text-decoration: none;
 }
 
-.signup-text a:hover {
+.login-text a:hover {
   text-decoration: underline;
 }
