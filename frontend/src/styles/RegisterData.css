@@ -1,0 +1,101 @@
+/* General Page Styling */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4e5ff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 200px;
+  margin-bottom: 0.5px;
+  border-radius: 10px;
+}
+
+/* Title */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #8a4ddf;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: #6e3fcf;
+}
+
+/* Continue Button */
+button {
+  width: 108%;
+  padding: 12px;
+  background-color: #8a4ddf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 0.5px;
+}
+
+button:hover {
+  background-color: #6e3fcf;
+}
+
+/* Separator Line */
+.separator {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 625px;
+  margin: 20px 0;
+  color: #777;
+}
+
+.separator span {
+  flex: 1;
+  height: 1.5px;
+  background: #8a4ddf;
+  margin: 0 20px;
+}
+
+/* Log-in Link */
+.login-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.login-text a {
+  color: #8a4ddf;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
