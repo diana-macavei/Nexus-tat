@@ -11,48 +11,52 @@
 
 /* Logo */
 .logo {
+  border-radius: 10px;
   width: 120px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 /* Title and Subtitle */
 h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   color: #222;
+  margin-bottom: 5px;
 }
 
 .subtitle {
   font-size: 16px;
   color: #666;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-/* Input Fields */
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 350px;
+  max-width: 350px; /* Set fixed width for all elements */
 }
 
+/* Input Fields */
 input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 2px solid #d1aaff;
+  margin-bottom: 12px;
+  border: 2px solid #8a4ddf;
   border-radius: 8px;
   font-size: 16px;
   outline: none;
+  transition: 0.2s ease-in-out;
 }
 
 input:focus {
-  border-color: #8a4ddf;
+  border-color: #6e3fcf;
 }
 
 /* Continue Button */
 button {
-  width: 100%;
+  width: 108%;
   padding: 12px;
   background-color: #8a4ddf;
   color: white;
@@ -62,6 +66,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  margin-top: 0.5px;
 }
 
 button:hover {
@@ -73,7 +78,7 @@ button:hover {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 350px;
+  max-width: 625px;
   margin: 20px 0;
   color: #777;
 }
@@ -81,7 +86,7 @@ button:hover {
 .separator span {
   flex: 1;
   height: 1px;
-  background: #ccc;
+  background: #8a4ddf;
   margin: 0 10px;
 }
 
