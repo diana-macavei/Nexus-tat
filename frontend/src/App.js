@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/Login";
 import RegisterData from "./pages/RegisterData";
 import RegisterQuestion from "./pages/RegisterQuestion";
+import UserPage from "./pages/UserPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/registerdata" element={<RegisterData />} />
             <Route path="/registerquestion" element={<RegisterQuestion />} />
-
+            <Route path="/userpage" element={<UserPage />} />
         </Routes>
       </Router>
     </div>
