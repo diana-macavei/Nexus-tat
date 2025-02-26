@@ -1,0 +1,263 @@
+/* Full-page layout */
+.full-container {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 0.1%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: white;
+  padding: 1.5% 5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 7.5%;
+}
+
+/* logo corner */
+.navbar-logo {
+  position: absolute; /* Keep it in a fixed position */
+  top: 1%; /* Adjust this value to move it down */
+  left: 0.5%; /* Adjust this to move it from the left */
+  border-radius: 10px;
+  width: 5.5%;
+  z-index: 1000; /* Keep it above other elements */
+}
+
+/* my accound and mesages */
+.nav-links {
+  display: flex;
+  gap: 4vh;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* circle with pfp */
+.profile-card {
+  width: 30vh; /* Adjust size */
+  height: 30vh;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12%;  /* Moves it 50px from the top */
+  left: 7%; /* Moves it 50px from the left */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* name, group name and semigroup name */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.4em;
+  position: absolute;
+  top: 16%;
+  left: 25vw;
+}
+
+/* Profile Section (pfp, name, group leader name) */
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 40%; /* Space between elements */
+  margin-top: 5%; /* Reduce top margin */
+
+}
+
+/* Group leader, sys admin, semigroup coord., secretary */
+.profile-info-box {
+  background: white;
+  padding: 1%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  font-size: 1.4em;
+  font-weight: bold;
+  max-height: 22vh;
+  margin-top: -2%; /* Reduce top margin */
+}
+
+/* Read, key info, notif and deadlines */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 5%;
+  gap: 10%;
+  max-height: 55vh;
+}
+
+/* Read, key info, notif and deadlines */
+.left-content {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  flex: 1; /* Takes up more space */
+}
+
+/* Read, complete and submit */
+.section-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 15%;
+  text-align: left;
+  margin-bottom: 2%;
+  color: #333;
+  grid-column: span 2; /* Make sure it spans the full width */
+}
+
+/* grid with key info, ess docs, forms,polls */
+.card-grid {
+  display: grid;
+  margin-left: 30%;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 110%;
+}
+
+/* individual card header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* individual card */
+.card {
+  width: 270%;
+  background: white;
+  padding: 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin-bottom: -75%;
+}
+
+/* individual card description*/
+.card .description {
+  margin-top: 0.5%;
+  font-size: 1.3em;
+  color: #333;
+  line-height: 1.5;
+}
+
+.card .icon {
+  width: 2vw;
+  height: 70%;
+}
+
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  flex: 1; /* Takes less space */
+}
+
+/* Notifications */
+.notifications {
+  margin-top: -8.5%;
+  margin-left: 10%;
+  background: white;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.section-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #8a4ddf; /* Purple color for title */
+  margin-top: 1%;
+  margin-bottom: 10px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+/* Notifications and Timeline */
+.timeline {
+  margin-top: 0.5%;
+  margin-left: 10%;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%; /* Fixed width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top section (Now, Due, Time Remaining) */
+.timeline-header {
+  background-color: #914BEB;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 3%;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 1.3em;
+}
+
+/* Main timeline content */
+.timeline-body {
+  padding: 2%;
+  text-align: center;
+}
+
+.timeline-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+/* Styling for the event list */
+.timeline-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 5% 2%;
+}
+
+.timeline-event strong {
+  font-size: 14px;
+}
+
+.timeline-icon {
+  font-size: 18px;
+}
+
+
