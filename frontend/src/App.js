@@ -8,6 +8,7 @@ import RegisterData from "./pages/RegisterData";
 import RegisterQuestion from "./pages/RegisterQuestion";
 import UserPage from "./pages/UserPage";
 import GroupLeaderPage from "./pages/GroupLeaderPage";
+import SysAdminPage from "./pages/SysAdminPage";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path="/registerquestion" element={<RegisterQuestion />} />
             <Route path="/userpage" element={<UserPage />} />
             <Route path="/glpage" element={<GroupLeaderPage />} />
+            <Route path="/syspage" element={<SysAdminPage />} />
+
         </Routes>
       </Router>
     </div>
