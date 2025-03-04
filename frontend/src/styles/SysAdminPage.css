@@ -1,5 +1,5 @@
 /* Full-page layout */
-.gl-full-container {
+.sys-full-container {
   height: 100vh;
   overflow: hidden;
   background-color: #f2e7fb;
@@ -10,7 +10,7 @@
 }
 
 /* Navbar */
-.gl-navbar {
+.sys-navbar {
   margin-top: 0.1%;
   width: 100%;
   max-width: 100%;
@@ -24,7 +24,7 @@
 }
 
 /* Logo */
-.gl-navbar-logo {
+.sys-navbar-logo {
   position: absolute;
   top: 1%;
   left: 0.5%;
@@ -34,7 +34,7 @@
 }
 
 /* Navigation Links */
-.gl-nav-links {
+.sys-nav-links {
   display: flex;
   gap: 4vh;
   font-size: 1.4em;
@@ -42,7 +42,7 @@
 }
 
 /* Profile Section */
-.gl-profile-section {
+.sys-profile-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +53,7 @@
 }
 
 /* pfp circle */
-.gl-profile-card {
+.sys-profile-card {
   width: 30vh;
   height: 30vh;
   border-radius: 50%;
@@ -68,7 +68,7 @@
 }
 
 /* name, group, semigroup */
-.gl-user-info {
+.sys-user-info {
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -79,7 +79,7 @@
 }
 
 /* sys, semigroup, secretary */
-.gl-profile-info-box {
+.sys-profile-info-box {
   background: white;
   padding: 1%;
   border-radius: 8px;
@@ -88,11 +88,11 @@
   font-size: 1.4em;
   font-weight: bold;
   max-height: 22vh;
-  margin-top: -0.2%;
+  margin-top: 1%;
 }
 
 /* Main Content */
-.gl-content-section {
+.sys-content-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -105,8 +105,8 @@
 }
 
 /* Left Content */
-.gl-left-content {
-  margin-top: 5%;
+.sys-left-content {
+  margin-top: 6.5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2%;
@@ -114,7 +114,7 @@
 }
 
 /* Section Title */
-.gl-section-header {
+.sys-section-header {
   font-size: 1.4em;
   font-weight: bold;
   margin-left: 15%;
@@ -125,7 +125,7 @@
 }
 
 /* Individual Cards */
-.gl-card-grid {
+.sys-card-grid {
   display: grid;
   margin-left: 30%;
   grid-template-columns: repeat(2, 2fr);
@@ -134,7 +134,7 @@
 }
 
 /* General card styles */
-.gl-card {
+.sys-card {
   background: white;
   padding: 8%;
   border-radius: 10px;
@@ -142,28 +142,27 @@
   display: flex;
   flex-direction: column;
   gap: 5%;
-
 }
 
 /* First column cards */
-.gl-card:nth-child(1){
+.sys-card:nth-child(1){
   width: 260%;
   margin-top: -15%;
   margin-bottom: 10%;
 }
-.gl-card:nth-child(3){
+.sys-card:nth-child(3){
   width: 260%;
   margin-top: -15%;
   margin-bottom: 10%;
 }
-.gl-card:nth-child(5) {
+.sys-card:nth-child(5) {
   width: 260%;
   margin-top: -15%;
   margin-bottom: 10%;
 }
 
 /* Second column cards */
-.gl-card:nth-child(2){
+.sys-card:nth-child(2){
   width: 230%;
   margin-left: 190%;
   margin-top: -40%;
@@ -171,7 +170,7 @@
   padding-top: 0.01%;
   padding-bottom: 0.01%;
 }
-.gl-card:nth-child(4){
+.sys-card:nth-child(4){
   width: 230%;
   margin-left: 190%;
   margin-top: -65%;
@@ -179,16 +178,15 @@
   padding-top: 0.01%;
   padding-bottom: 0.01%;
 }
-.gl-card:nth-child(6) {
+.sys-card:nth-child(6) {
   width: 230%;
   margin-left: 190%;
   margin-top: -77%;
   line-height: 1;
   padding-top: 0.01%;
   padding-bottom: 0.01%;
-
 }
-.gl-card:nth-child(7) {
+.sys-card:nth-child(7) {
   grid-column: 2; /* Place it in the second column */
   width: 230%; /* Adjust width to match second-column cards */
   margin-left: 190%;
@@ -196,11 +194,10 @@
   line-height: 1;
   padding-top: 0.01%;
   padding-bottom: 0.01%;
-
 }
 
 /* Card Header */
-.gl-card-header {
+.sys-card-header {
   display: flex;
   align-items: center;
   gap: 6%;
@@ -209,20 +206,20 @@
 }
 
 /* Card Description */
-.gl-card .description {
+.sys-card .description {
   margin-top: 0.5%;
   font-size: 1.3em;
   color: #333;
   line-height: 1.5;
 }
 
-.gl-card .icon {
+.sys-card .icon {
   width: 2vw;
   height: 70%;
 }
 
 /* Right Content */
-.gl-right-content {
+.sys-right-content {
   display: flex;
   flex-direction: column;
   gap: 1vw;
@@ -230,8 +227,8 @@
 }
 
 /* Notifications */
-.gl-notifications {
-  margin-top: 8%;
+.sys-notifications {
+  margin-top: 12%;
   margin-left: 10%;
   background: white;
   padding: 2%;
@@ -240,7 +237,7 @@
   width: 40%;
 }
 
-.gl-section-title {
+.sys-section-title {
   font-size: 1.4em;
   font-weight: bold;
   color: #8a4ddf;
@@ -248,7 +245,7 @@
   margin-bottom: 10px;
 }
 
-.gl-notification-item {
+.sys-notification-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -258,7 +255,7 @@
 }
 
 /* Timeline */
-.gl-timeline {
+.sys-timeline {
   margin-top: 0.5%;
   margin-left: 10%;
   background: white;
@@ -272,7 +269,7 @@
 }
 
 /* Timeline Header */
-.gl-timeline-header {
+.sys-timeline-header {
   background-color: #914BEB;
   color: white;
   font-weight: bold;
@@ -283,19 +280,19 @@
 }
 
 /* Timeline Body */
-.gl-timeline-body {
+.sys-timeline-body {
   padding: 2%;
   text-align: center;
 }
 
-.gl-timeline-title {
+.sys-timeline-title {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 1vh;
 }
 
 /* Timeline Event */
-.gl-timeline-event {
+.sys-timeline-event {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -303,57 +300,30 @@
   margin: 5% 2%;
 }
 
-.gl-timeline-icon {
+.sys-timeline-icon {
   font-size: 18px;
 }
 
-/* --- Group Leader Specific Styles --- */
+/* --- System Admin Specific Styles --- */
 
 /* Administration Section */
-.gl-admin-section {
+.sys-admin-section {
   display: flex;
   flex-direction: column;
   margin-left: 15%;
   margin-bottom: 5%;
 }
 
-.gl-admin-title {
+.sys-admin-title {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 2%;
 }
 
 /* Admin Card Grid */
-.gl-admin-grid {
+.sys-admin-grid {
   display: grid;
-  grid-template-columns: repeat(2, 2fr); /* Two columns */
+  grid-template-columns: repeat(2, 2fr);
   gap: 5%;
 }
 
-/* Admin Cards */
-.gl-admin-card {
-  width: 270%;
-  background: white;
-  padding: 10%;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 5%;
-  margin-bottom: -75%;
-}
-
-.gl-admin-card-header {
-  display: flex;
-  align-items: center;
-  gap: 6%;
-  font-weight: bold;
-  font-size: 1.4em;
-}
-
-.gl-admin-card .description {
-  margin-top: 0.5%;
-  font-size: 1.3em;
-  color: #333;
-  line-height: 1.5;
-}
