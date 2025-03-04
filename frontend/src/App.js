@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import RegisterData from "./pages/RegisterData";
 import RegisterQuestion from "./pages/RegisterQuestion";
 import UserPage from "./pages/UserPage";
+import GroupLeaderPage from "./pages/GroupLeaderPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/registerdata" element={<RegisterData />} />
             <Route path="/registerquestion" element={<RegisterQuestion />} />
             <Route path="/userpage" element={<UserPage />} />
+            <Route path="/glpage" element={<GroupLeaderPage />} />
         </Routes>
       </Router>
     </div>
