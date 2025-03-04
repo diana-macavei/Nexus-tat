@@ -1,0 +1,329 @@
+/* Full-page layout */
+.sys-full-container {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.sys-navbar {
+  margin-top: 0.1%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: white;
+  padding: 1.5% 5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 7.5%;
+}
+
+/* Logo */
+.sys-navbar-logo {
+  position: absolute;
+  top: 1%;
+  left: 0.5%;
+  border-radius: 10px;
+  width: 5.5%;
+  z-index: 1000;
+}
+
+/* Navigation Links */
+.sys-nav-links {
+  display: flex;
+  gap: 4vh;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* Profile Section */
+.sys-profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 40%;
+  margin-top: 5%;
+}
+
+/* pfp circle */
+.sys-profile-card {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* name, group, semigroup */
+.sys-user-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.4em;
+  position: absolute;
+  top: 15%;
+  left: 25vw;
+}
+
+/* sys, semigroup, secretary */
+.sys-profile-info-box {
+  background: white;
+  padding: 1%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  font-size: 1.4em;
+  font-weight: bold;
+  max-height: 22vh;
+  margin-top: 1%;
+}
+
+/* Main Content */
+.sys-content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1%;
+  gap: 10%;
+  max-height: 55vh;
+}
+
+/* Left Content */
+.sys-left-content {
+  margin-top: 6.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  flex: 1;
+}
+
+/* Section Title */
+.sys-section-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 15%;
+  text-align: left;
+  margin-bottom: 2%;
+  color: #333;
+  grid-column: span 2;
+}
+
+/* Individual Cards */
+.sys-card-grid {
+  display: grid;
+  margin-left: 30%;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 5%;
+  align-items: start;
+}
+
+/* General card styles */
+.sys-card {
+  background: white;
+  padding: 8%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+/* First column cards */
+.sys-card:nth-child(1){
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+.sys-card:nth-child(3){
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+.sys-card:nth-child(5) {
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+
+/* Second column cards */
+.sys-card:nth-child(2){
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -40%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+.sys-card:nth-child(4){
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -65%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+.sys-card:nth-child(6) {
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -77%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+.sys-card:nth-child(7) {
+  grid-column: 2; /* Place it in the second column */
+  width: 230%; /* Adjust width to match second-column cards */
+  margin-left: 190%;
+  margin-top: -115%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+
+/* Card Header */
+.sys-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* Card Description */
+.sys-card .description {
+  margin-top: 0.5%;
+  font-size: 1.3em;
+  color: #333;
+  line-height: 1.5;
+}
+
+.sys-card .icon {
+  width: 2vw;
+  height: 70%;
+}
+
+/* Right Content */
+.sys-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  flex: 1;
+}
+
+/* Notifications */
+.sys-notifications {
+  margin-top: 12%;
+  margin-left: 10%;
+  background: white;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.sys-section-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #8a4ddf;
+  margin-top: 1%;
+  margin-bottom: 10px;
+}
+
+.sys-notification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Timeline */
+.sys-timeline {
+  margin-top: 0.5%;
+  margin-left: 10%;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Timeline Header */
+.sys-timeline-header {
+  background-color: #914BEB;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 3%;
+  border-radius: 10px;
+  font-size: 1.3em;
+}
+
+/* Timeline Body */
+.sys-timeline-body {
+  padding: 2%;
+  text-align: center;
+}
+
+.sys-timeline-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+/* Timeline Event */
+.sys-timeline-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 5% 2%;
+}
+
+.sys-timeline-icon {
+  font-size: 18px;
+}
+
+/* --- System Admin Specific Styles --- */
+
+/* Administration Section */
+.sys-admin-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+.sys-admin-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+/* Admin Card Grid */
+.sys-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 5%;
+}
+
