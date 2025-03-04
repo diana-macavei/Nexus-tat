@@ -1,0 +1,359 @@
+/* Full-page layout */
+.gl-full-container {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.gl-navbar {
+  margin-top: 0.1%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: white;
+  padding: 1.5% 5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 7.5%;
+}
+
+/* Logo */
+.gl-navbar-logo {
+  position: absolute;
+  top: 1%;
+  left: 0.5%;
+  border-radius: 10px;
+  width: 5.5%;
+  z-index: 1000;
+}
+
+/* Navigation Links */
+.gl-nav-links {
+  display: flex;
+  gap: 4vh;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* Profile Section */
+.gl-profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 40%;
+  margin-top: 5%;
+}
+
+/* pfp circle */
+.gl-profile-card {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* name, group, semigroup */
+.gl-user-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.4em;
+  position: absolute;
+  top: 15%;
+  left: 25vw;
+}
+
+/* sys, semigroup, secretary */
+.gl-profile-info-box {
+  background: white;
+  padding: 1%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  font-size: 1.4em;
+  font-weight: bold;
+  max-height: 22vh;
+  margin-top: -1.7%;
+}
+
+/* Main Content */
+.gl-content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1%;
+  gap: 10%;
+  max-height: 55vh;
+}
+
+/* Left Content */
+.gl-left-content {
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  flex: 1;
+}
+
+/* Section Title */
+.gl-section-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 15%;
+  text-align: left;
+  margin-bottom: 2%;
+  color: #333;
+  grid-column: span 2;
+}
+
+/* Individual Cards */
+.gl-card-grid {
+  display: grid;
+  margin-left: 30%;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 5%;
+  align-items: start;
+}
+
+/* General card styles */
+.gl-card {
+  background: white;
+  padding: 8%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+
+}
+
+/* First column cards */
+.gl-card:nth-child(1){
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+.gl-card:nth-child(3){
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+.gl-card:nth-child(5) {
+  width: 260%;
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+
+/* Second column cards */
+.gl-card:nth-child(2){
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -40%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+.gl-card:nth-child(4){
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -65%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+}
+.gl-card:nth-child(6) {
+  width: 230%;
+  margin-left: 190%;
+  margin-top: -77%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+
+}
+.gl-card:nth-child(7) {
+  grid-column: 2; /* Place it in the second column */
+  width: 230%; /* Adjust width to match second-column cards */
+  margin-left: 190%;
+  margin-top: -115%;
+  line-height: 1;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
+
+}
+
+/* Card Header */
+.gl-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* Card Description */
+.gl-card .description {
+  margin-top: 0.5%;
+  font-size: 1.3em;
+  color: #333;
+  line-height: 1.5;
+}
+
+.gl-card .icon {
+  width: 2vw;
+  height: 70%;
+}
+
+/* Right Content */
+.gl-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  flex: 1;
+}
+
+/* Notifications */
+.gl-notifications {
+  margin-top: 3%;
+  margin-left: 10%;
+  background: white;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.gl-section-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #8a4ddf;
+  margin-top: 1%;
+  margin-bottom: 10px;
+}
+
+.gl-notification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Timeline */
+.gl-timeline {
+  margin-top: 0.5%;
+  margin-left: 10%;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Timeline Header */
+.gl-timeline-header {
+  background-color: #914BEB;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 3%;
+  border-radius: 10px;
+  font-size: 1.3em;
+}
+
+/* Timeline Body */
+.gl-timeline-body {
+  padding: 2%;
+  text-align: center;
+}
+
+.gl-timeline-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+/* Timeline Event */
+.gl-timeline-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 5% 2%;
+}
+
+.gl-timeline-icon {
+  font-size: 18px;
+}
+
+/* --- Group Leader Specific Styles --- */
+
+/* Administration Section */
+.gl-admin-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+.gl-admin-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+/* Admin Card Grid */
+.gl-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr); /* Two columns */
+  gap: 5%;
+}
+
+/* Admin Cards */
+.gl-admin-card {
+  width: 270%;
+  background: white;
+  padding: 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin-bottom: -75%;
+}
+
+.gl-admin-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.gl-admin-card .description {
+  margin-top: 0.5%;
+  font-size: 1.3em;
+  color: #333;
+  line-height: 1.5;
+}
