@@ -31,7 +31,6 @@ const GroupLeaderPage = () => {
         </div>
         <div className="gl-profile-info-box">
           <p> Sys admin name</p>
-          <p>Semigroup coordinator name</p>
           <p>Secretary name and phone no.</p>
         </div>
       </div>
