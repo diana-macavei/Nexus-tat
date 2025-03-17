@@ -9,6 +9,7 @@ import RegisterQuestion from "./pages/RegisterQuestion";
 import UserPage from "./pages/UserPage";
 import GroupLeaderPage from "./pages/GroupLeaderPage";
 import SysAdminPage from "./pages/SysAdminPage";
+import AccountPage from "./pages/AccountPage";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/userpage" element={<UserPage />} />
             <Route path="/glpage" element={<GroupLeaderPage />} />
             <Route path="/syspage" element={<SysAdminPage />} />
-
+            <Route path="/account" element={<AccountPage />} />
         </Routes>
       </Router>
     </div>

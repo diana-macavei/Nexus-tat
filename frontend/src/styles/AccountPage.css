@@ -1,0 +1,138 @@
+/* General Container */
+.acc-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.acc-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.8vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh; /* Optional: add fixed height */
+}
+
+.acc-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;          /* Move it lower */
+  left: 1vw;/* Move it more to the right */
+}
+
+.acc-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.8vh;
+}
+
+/* Profile Section */
+.acc-profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+  width: 100%;
+}
+
+/* Profile Circle */
+.acc-profile-card {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 4vh;
+}
+
+.acc-profile-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Form Section */
+.acc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  width: 30vw;
+  max-width: 40rem;
+  min-width: 20rem;
+}
+
+.acc-input-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 0.1rem solid #8a4ddf;
+  border-radius: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  justify-content: space-between;
+}
+
+.acc-input-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  width: 90%;
+}
+
+.acc-edit-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: #8a4ddf;
+}
+
+/* Leave Button */
+.acc-last {
+  position: relative;
+}
+
+.acc-leave {
+  position: absolute;
+  right: 1rem;
+  color: #8a4ddf;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .acc-form {
+    width: 60vw;
+  }
+
+  .acc-navbar-logo {
+    width: 10vw;
+  }
+
+  .acc-nav-links {
+    font-size: 1rem;
+  }
+
+  .acc-profile-card {
+    width: 15vh;
+    height: 15vh;
+  }
+
+  .acc-profile-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
