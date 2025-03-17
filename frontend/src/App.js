@@ -10,6 +10,7 @@ import UserPage from "./pages/UserPage";
 import GroupLeaderPage from "./pages/GroupLeaderPage";
 import SysAdminPage from "./pages/SysAdminPage";
 import AccountPage from "./pages/AccountPage";
+import SysDocs from "./pages/SysDocs";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/glpage" element={<GroupLeaderPage />} />
             <Route path="/syspage" element={<SysAdminPage />} />
             <Route path="/account" element={<AccountPage />} />
+            <Route path="/sysdocs" element={<SysDocs />} />
         </Routes>
       </Router>
     </div>
