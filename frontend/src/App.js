@@ -11,6 +11,7 @@ import GroupLeaderPage from "./pages/GroupLeaderPage";
 import SysAdminPage from "./pages/SysAdminPage";
 import AccountPage from "./pages/AccountPage";
 import SysDocs from "./pages/SysDocs";
+import Docs from "./pages/Docs";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/syspage" element={<SysAdminPage />} />
             <Route path="/account" element={<AccountPage />} />
             <Route path="/sysdocs" element={<SysDocs />} />
+            <Route path="/gldocs" element={<SysDocs />} />
+            <Route path="/docs" element={<Docs />} />
         </Routes>
       </Router>
     </div>
