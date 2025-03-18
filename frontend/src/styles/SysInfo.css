@@ -1,0 +1,176 @@
+/* SysInfoPage.css */
+.sysinfo-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sysinfo-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.1vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh;
+}
+
+.sysinfo-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;
+  left: 1vw;
+}
+
+.sysinfo-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
+
+.sysinfo-content-section {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 2vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+.sysinfo-left-buttons {
+  margin-top: 18vh;
+  background: #f2e7fb;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex: 1;
+}
+
+.sysinfo-button {
+  background: white;
+  padding: 1vh 1vw;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  color: black;
+}
+
+.sysinfo-button.active {
+  color: #8a4ddf;
+}
+
+.sysinfo-middle-viewer {
+  background: white;
+  padding: 2vh 2vw;
+  border-radius: 0.5rem;
+  flex: 3;
+  overflow-y: scroll;
+}
+
+.sysinfo-doc-title {
+  font-size: 1.3em;
+  color: #8a4ddf;
+  margin-bottom: 1vh;
+}
+
+.sysinfo-doc-content img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.sysinfo-right-section {
+  background: #f2e7fb;
+  padding: 2vh 1vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sysinfo-right-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+  gap: 1vw;
+}
+
+.sysinfo-right-highlight {
+  display: flex;
+  flex-direction: column;
+  color: #8a4ddf;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.sysinfo-right-divider {
+  width: 0.2rem;
+  height: 4rem;
+  background-color: #8a4ddf;
+  margin: 0 0.1vw;
+}
+
+.sysinfo-right-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.sysinfo-right-right-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.sysinfo-doc-link {
+  color: #8a4ddf;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.sysinfo-middle-viewer::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.sysinfo-middle-viewer::-webkit-scrollbar-thumb {
+  background: #c1b2d9;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sysinfo-content-section {
+    flex-direction: column;
+  }
+
+  .sysinfo-left-buttons, .sysinfo-right-section {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .sysinfo-middle-viewer {
+    order: 3;
+  }
+}

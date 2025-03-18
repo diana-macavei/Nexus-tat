@@ -12,6 +12,7 @@ import SysAdminPage from "./pages/SysAdminPage";
 import AccountPage from "./pages/AccountPage";
 import SysDocs from "./pages/SysDocs";
 import Docs from "./pages/Docs";
+import SysInfo from "./pages/SysInfo";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
             <Route path="/sysdocs" element={<SysDocs />} />
             <Route path="/gldocs" element={<SysDocs />} />
             <Route path="/docs" element={<Docs />} />
+            <Route path="/sysinfo" element={<SysInfo />} />
+
         </Routes>
       </Router>
     </div>
