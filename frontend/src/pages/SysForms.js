@@ -27,13 +27,13 @@ const SysFormsPage = () => {
       <div className="sysforms-content-section">
         {/* Left Buttons */}
         <div className="sysforms-left-buttons">
-          <button className="sysinfo-button" style={{ color: "black" }}>Hub info</button>
-          <button className="sysinfo-button" style={{ color: "black" }}>Essential data</button>
-          <button className="sysinfo-button" style={{ color: "black" }}>Manage and create</button>
-          <button className="sysinfo-button" style={{ color: "black" }}>Key Information</button>
-          <button className="sysdocs-button" style={{ color: "black" }}>Essential Documents</button>
-          <button className="sysinfo-button active" style={{ color: "#8a4ddf" }}>Forms</button>
-          <button className="sysinfo-button" style={{ color: "black" }}>Polls</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Hub info</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Essential data</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Manage and create</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Key Information</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Essential Documents</button>
+          <button className="sysforms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
+          <button className="sysforms-button" style={{ color: "black" }}>Polls</button>
         </div>
 
         {/* Forms Table */}
