@@ -16,6 +16,7 @@ import SysInfo from "./pages/SysInfo";
 import Info from "./pages/Info";
 import SysForms from "./pages/SysForms";
 import Forms from "./pages/Forms";
+import SysPolls from "./pages/SysPolls";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/sysforms" element={<SysForms />} />
             <Route path="/glforms" element={<SysForms />} />
             <Route path="/forms" element={<Forms />} />
+            <Route path="/syspolls" element={<SysPolls />} />
         </Routes>
       </Router>
     </div>
