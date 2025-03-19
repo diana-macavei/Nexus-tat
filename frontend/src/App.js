@@ -15,6 +15,7 @@ import Docs from "./pages/Docs";
 import SysInfo from "./pages/SysInfo";
 import Info from "./pages/Info";
 import SysForms from "./pages/SysForms";
+import Forms from "./pages/Forms";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             <Route path="/info" element={<Info />} />
             <Route path="/sysforms" element={<SysForms />} />
             <Route path="/glforms" element={<SysForms />} />
-
+            <Route path="/forms" element={<Forms />} />
         </Routes>
       </Router>
     </div>
