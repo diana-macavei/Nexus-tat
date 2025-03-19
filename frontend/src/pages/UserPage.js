@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/UserPage.css";
 import logo from "../assets/nexus.webp"
-import { Calendar, FileText, Info, List, User, BarChart, ClipboardList, Clipboard } from "lucide-react";
+import { Calendar, FileText, Info, List, User, BarChart, Clipboard } from "lucide-react";
 
 const UserPage = () => {
   return (
