@@ -35,6 +35,7 @@ const SysInfoPage = () => {
           <button className="sysinfo-button" style={{ color: "black" }}>Essential data</button>
           <button className="sysinfo-button" style={{ color: "black" }}>Manage and create</button>
           <button className="sysinfo-button active" style={{ color: "#8a4ddf" }}>Key Information</button>
+          <button className="sysdocs-button" style={{ color: "black" }}>Essential Documents</button>
           <button className="sysinfo-button" style={{ color: "black" }}>Forms</button>
           <button className="sysinfo-button" style={{ color: "black" }}>Polls</button>
         </div>
