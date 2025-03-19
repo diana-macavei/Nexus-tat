@@ -34,8 +34,8 @@ const SysDocsPage = () => {
           <button className="sysdocs-button" style={{ color: "black" }}>Hub info</button>
           <button className="sysdocs-button" style={{ color: "black" }}>Essential data</button>
           <button className="sysdocs-button" style={{ color: "black" }}>Manage and create</button>
-          <button className="sysdocs-button active" style={{ color: "#8a4ddf" }}>Essential Documents</button>
           <button className="sysdocs-button" style={{ color: "black" }}>Key Information</button>
+          <button className="sysdocs-button active" style={{ color: "#8a4ddf" }}>Essential Documents</button>
           <button className="sysdocs-button" style={{ color: "black" }}>Forms</button>
           <button className="sysdocs-button" style={{ color: "black" }}>Polls</button>
         </div>
