@@ -18,6 +18,9 @@ import SysForms from "./pages/SysForms";
 import Forms from "./pages/Forms";
 import SysPolls from "./pages/SysPolls";
 import Polls from "./pages/Polls";
+import SysCreate from "./pages/SysCreate";
+import GlCreate from "./pages/GlCreate";
+
 
 function App() {
   return (
@@ -44,6 +47,8 @@ function App() {
             <Route path="/syspolls" element={<SysPolls />} />
             <Route path="/glpolls" element={<SysPolls />} />
             <Route path="/polls" element={<Polls />} />
+            <Route path="/syscreate" element={<SysCreate />} />
+            <Route path="/glcreate" element={<GlCreate />} />
         </Routes>
       </Router>
     </div>
