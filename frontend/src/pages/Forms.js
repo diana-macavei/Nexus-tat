@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/SysForms.css";
+import "../styles/Forms.css";
 import logo from "../assets/nexus.webp";
 import { FaRegFileAlt } from "react-icons/fa";
 
@@ -9,37 +9,34 @@ const formEntries = [
   { no: 3, type: "Hub", name: "Form3", date: "05-06-2025", status: "Done" },
 ];
 
-const SysFormsPage = () => {
+const FormsPage = () => {
   const [popupForm, setPopupForm] = useState(null);
 
   return (
-    <div className="sysforms-full-container">
+    <div className="forms-full-container">
       {/* Navbar */}
-      <div className="sysforms-navbar">
-        <img src={logo} alt="Nexus Logo" className="sysforms-navbar-logo" />
-        <div className="sysforms-nav-links">
+      <div className="forms-navbar">
+        <img src={logo} alt="Nexus Logo" className="forms-navbar-logo" />
+        <div className="forms-nav-links">
           <span>My account</span>
           <span>Messages</span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="sysforms-content-section">
+      <div className="forms-content-section">
         {/* Left Buttons */}
-        <div className="sysforms-left-buttons">
-          <button className="sysforms-button" style={{ color: "black" }}>Hub info</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Essential data</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Manage and create</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Key Information</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Essential Documents</button>
-          <button className="sysforms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Polls</button>
+        <div className="forms-left-buttons">
+          <button className="forms-button" style={{ color: "black" }}>Key Information</button>
+          <button className="forms-button" style={{ color: "black" }}>Essential Documents</button>
+          <button className="forms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
+          <button className="forms-button" style={{ color: "black" }}>Polls</button>
         </div>
 
         {/* Forms Table */}
-        <div className="sysforms-forms-section">
-          <h2 className="sysforms-title">Ongoing forms</h2>
-          <table className="sysforms-table">
+        <div className="forms-forms-section">
+          <h2 className="forms-title">Ongoing forms</h2>
+          <table className="forms-table">
             <thead>
               <tr>
                 <th>No.</th>
@@ -62,7 +59,7 @@ const SysFormsPage = () => {
                   </td>
                   <td>
                     <FaRegFileAlt
-                      className="sysforms-icon"
+                      className="forms-icon"
                       onClick={() => setPopupForm(form.name)}
                     />
                   </td>
@@ -75,10 +72,10 @@ const SysFormsPage = () => {
 
       {/* Popup Form */}
       {popupForm && (
-        <div className="sysforms-popup">
-          <div className="sysforms-popup-content">
+        <div className="forms-popup">
+          <div className="forms-popup-content">
             <button
-              className="sysforms-popup-close"
+              className="forms-popup-close"
               onClick={() => setPopupForm(null)}
             >
               &times;
@@ -92,4 +89,4 @@ const SysFormsPage = () => {
   );
 };
 
-export default SysFormsPage;
+export default FormsPage;

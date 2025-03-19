@@ -1,0 +1,198 @@
+/* FormsPage CSS */
+
+/* General Container */
+.forms-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Navbar */
+.forms-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.1vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh;
+}
+
+.forms-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;
+  left: 1vw;
+}
+
+.forms-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
+
+/* Content Section */
+.forms-content-section {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 2vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+/* Left Buttons */
+.forms-left-buttons {
+  margin-top: 24vh;
+  background: #f2e7fb;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex: 1;
+}
+
+.forms-button {
+  background: white;
+  padding: 1.5vh 1vw;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+}
+
+.forms-button.active {
+  color: #8a4ddf;
+}
+
+/* Forms Table Section */
+.forms-forms-section {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 3vh 3vw;
+  overflow-y: auto;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.forms-title {
+  font-size: 2rem;
+  color: #8a4ddf;
+  margin-bottom: 3vh;
+  font-weight: bold;
+}
+
+.forms-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.forms-table th, .forms-table td {
+  padding: 1.2vh 1vw;
+  text-align: center;
+}
+
+.forms-table th {
+  background-color: #f2e7fb;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.forms-table tr:nth-child(even) {
+  background-color: #f2e7fb;
+}
+
+.forms-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.forms-table td {
+  font-weight: bold;
+}
+
+.forms-table .done {
+  color: #00c97c;
+}
+
+.forms-table .not-done {
+  color: red;
+}
+
+.forms-icon {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Popup Styling */
+.forms-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.forms-popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 60%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.forms-popup-close {
+  position: absolute;
+  top: 0.5rem;  /* Moves it above the purple bar */
+  right: 1rem;
+  background: #8a4ddf;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .forms-content-section {
+    flex-direction: column;
+  }
+
+  .forms-left-buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .forms-forms-section {
+    order: 3;
+  }
+}
