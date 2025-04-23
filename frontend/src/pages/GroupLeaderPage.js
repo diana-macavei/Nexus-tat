@@ -2,8 +2,10 @@ import React from "react";
 import "../styles/GroupLeaderPage.css";
 import logo from "../assets/nexus.webp";
 import { Calendar, FileText, Info, List, User, BarChart, Clipboard, Pencil, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const GroupLeaderPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="gl-full-container">
       {/* Navbar */}
@@ -42,7 +44,7 @@ const GroupLeaderPage = () => {
           <h2 className="gl-section-header">Administration</h2>
           <div className="gl-card-grid">
             {/* Group Info */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/")}>
               <div className="gl-card-header">
                 <Users className="gl-icon" />
                 <p className="gl-title">Group info</p>
@@ -50,7 +52,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">Explore detailed information about your group members.</p>
             </div>
             {/* Key Information */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/glinfo")}>
               <div className="gl-card-header">
                 <Info className="gl-icon" />
                 <p className="gl-title">Key Information</p>
@@ -58,7 +60,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">Updates, announcements, and details about your group’s activities in one place.</p>
             </div>
             {/* Essential Data */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/")}>
               <div className="gl-card-header">
                 <FileText className="gl-icon" />
                 <p className="gl-title">Essential data</p>
@@ -66,7 +68,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">See information about the ongoing forms and polls.</p>
             </div>
             {/* Essential Documents */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/gldocs")}>
               <div className="gl-card-header">
                 <FileText className="gl-icon" />
                 <p className="gl-title">Essential Documents</p>
@@ -74,7 +76,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">View and download important files shared within your group.</p>
             </div>
             {/* Manage and Create */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/glcreate")}>
               <div className="gl-card-header">
                 <Pencil className="gl-icon" />
                 <p className="gl-title">Manage and create</p>
@@ -82,7 +84,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">Create and add key information forms, polls, deadlines to assign your group for better organization.</p>
             </div>
             {/* Forms */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/glforms")}>
               <div className="gl-card-header">
                 <List className="gl-icon" />
                 <p className="gl-title">Forms</p>
@@ -90,7 +92,7 @@ const GroupLeaderPage = () => {
               <p className="gl-description">Quickly fill out, submit, and manage forms assigned to you by your group.</p>
             </div>
             {/* Polls */}
-            <div className="gl-card">
+            <div className="gl-card" onClick={() => navigate("/glpolls")}>
               <div className="gl-card-header">
                 <List className="gl-icon" />
                 <p className="gl-title">Polls</p>

@@ -1,0 +1,212 @@
+/* General Container */
+.glpolls-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Navbar */
+.glpolls-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.1vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh;
+}
+
+.glpolls-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;
+  left: 1vw;
+}
+
+.glpolls-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
+
+/* Content Section */
+.glpolls-content-section {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 2vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+/* Left Buttons */
+.glpolls-left-buttons {
+  margin-top: 18vh;
+  background: #f2e7fb;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex: 1;
+}
+
+.glpolls-button {
+  background: white;
+  padding: 1.5vh 1vw;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+}
+
+.glpolls-button.active {
+  color: #8a4ddf;
+}
+
+/* Polls Section */
+.glpolls-polls-section {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 3vh 3vw;
+  overflow-y: auto;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.glpolls-title {
+   font-size: 1.8rem;
+  color: #8a4ddf;
+  font-weight: bold;
+  margin-bottom: 2vh;
+  align-self: flex-start; /* Push to the left */
+  margin-left: 6vw;       /* Adjust as needed */
+  text-align: left;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Shadow added */
+}
+
+/* Header Bar */
+.glpolls-poll-header-bar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  width: 80%; /* Match poll width */
+  background-color: #f2e7fb;
+  border-radius: 0.8rem;
+  padding: 0.8vh 1vw;
+  margin-bottom: 1vh;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+/* Poll Container */
+.glpolls-poll-container {
+  width: 80%; /* Reduced width */
+  background-color: #f2e7fb;
+  border-radius: 0.8rem;  /* Smaller corners */
+  padding: 1vh 1vw;       /* Less padding */
+  margin-bottom: 1vh;     /* Less space between polls */
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vh;             /* Reduced gap */
+}
+
+/* Top Section Inside Each Poll */
+.glpolls-poll-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  padding-bottom: 1vh;
+}
+
+.glpolls-poll-number {
+  color: #8a4ddf;
+  font-weight: bold;
+}
+
+.glpolls-poll-type,
+.glpolls-poll-date {
+  font-weight: bold;
+}
+
+.glpolls-poll-status {
+  font-weight: bold;
+}
+
+.glpolls-poll-status.done {
+  color: #00c97c;
+}
+
+.glpolls-poll-status.not-done {
+  color: red;
+}
+
+/* Poll Body */
+.glpolls-poll-body {
+  margin-top: 0.3vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  padding: 0.3vh 0.5vw;
+}
+
+.glpolls-poll-body p {
+  font-weight: bold;
+  margin-bottom: 1vh;
+  text-align: left;
+}
+
+.glpolls-poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vh;
+  width: 60%; /* Adjust width as desired */
+}
+
+.glpolls-poll-body label {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.8vh 0.8vw;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  justify-content: flex-start;
+}
+
+.glpolls-poll-body input[type="checkbox"] {
+  margin-right: 0.8vw;
+  accent-color: #8a4ddf;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glpolls-content-section {
+    flex-direction: column;
+  }
+
+  .glpolls-left-buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .glpolls-polls-section {
+    order: 3;
+  }
+}

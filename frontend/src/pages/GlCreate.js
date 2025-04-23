@@ -5,9 +5,12 @@ import linkIcon from "../assets/icons/link.png";
 import dragIcon from "../assets/icons/stack.png";
 import plusIcon from "../assets/icons/plus.png";
 import minusIcon from "../assets/icons/minus.png";
+import { useNavigate } from "react-router-dom";
+import { Home, ArrowLeft } from "lucide-react";
 
 const GlCreatePage = () => {
   const [options, setOptions] = useState(["Option 1", "Option 2"]);
+  const navigate = useNavigate();
 
   const addOption = () => {
     setOptions([...options, `Option ${options.length + 1}`]);
@@ -24,6 +27,11 @@ const GlCreatePage = () => {
       {/* Navbar */}
       <div className="glcreate-navbar">
         <img src={logo} alt="Nexus Logo" className="glcreate-navbar-logo" />
+        <Home
+            className="back-icon"
+            onClick={() => navigate("/glpage")}
+            title="Back to Dashboard"
+        />
         <div className="glcreate-nav-links">
           <span>My account</span>
           <span>Messages</span>

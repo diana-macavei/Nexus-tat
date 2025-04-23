@@ -1,0 +1,176 @@
+/* glInfoPage.css */
+.glinfo-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.glinfo-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.1vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh;
+}
+
+.glinfo-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;
+  left: 1vw;
+}
+
+.glinfo-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
+
+.glinfo-content-section {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 2vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+.glinfo-left-buttons {
+  margin-top: 18vh;
+  background: #f2e7fb;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex: 1;
+}
+
+.glinfo-button {
+  background: white;
+  padding: 1vh 1vw;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  color: black;
+}
+
+.glinfo-button.active {
+  color: #8a4ddf;
+}
+
+.glinfo-middle-viewer {
+  background: white;
+  padding: 2vh 2vw;
+  border-radius: 0.5rem;
+  flex: 3;
+  overflow-y: scroll;
+}
+
+.glinfo-doc-title {
+  font-size: 1.3em;
+  color: #8a4ddf;
+  margin-bottom: 1vh;
+}
+
+.glinfo-doc-content img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.glinfo-right-section {
+  background: #f2e7fb;
+  padding: 2vh 1vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.glinfo-right-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+  gap: 1vw;
+}
+
+.glinfo-right-highlight {
+  display: flex;
+  flex-direction: column;
+  color: #8a4ddf;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.glinfo-right-divider {
+  width: 0.2rem;
+  height: 4rem;
+  background-color: #8a4ddf;
+  margin: 0 0.1vw;
+}
+
+.glinfo-right-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.glinfo-right-right-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.glinfo-doc-link {
+  color: #8a4ddf;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.glinfo-middle-viewer::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.glinfo-middle-viewer::-webkit-scrollbar-thumb {
+  background: #c1b2d9;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .glinfo-content-section {
+    flex-direction: column;
+  }
+
+  .glinfo-left-buttons, .glinfo-right-section {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .glinfo-middle-viewer {
+    order: 3;
+  }
+}
