@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/SysAdminPage.css";
 import logo from "../assets/nexus.webp";
 import { Calendar, FileText, Info, List, User, BarChart, Clipboard, Pencil, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 const GroupLeaderPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="sys-full-container">
       {/* Navbar */}
@@ -41,15 +44,15 @@ const GroupLeaderPage = () => {
           <h2 className="sys-section-header">Administration</h2>
           <div className="sys-card-grid">
             {/* Group Info */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/")}>
               <div className="sys-card-header">
                 <Users className="sys-icon" />
-                <p className="sys-title">Group info</p>
+                <p className="sys-title">Hub info</p>
               </div>
               <p className="sys-description">Explore detailed information about your group members.</p>
             </div>
             {/* Key Information */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/sysinfo")}>
               <div className="sys-card-header">
                 <Info className="sys-icon" />
                 <p className="sys-title">Key Information</p>
@@ -57,7 +60,7 @@ const GroupLeaderPage = () => {
               <p className="sys-description">Updates, announcements, and details about your group’s activities in one place.</p>
             </div>
             {/* Essential Data */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/")}>
               <div className="sys-card-header">
                 <FileText className="sys-icon" />
                 <p className="sys-title">Essential data</p>
@@ -65,7 +68,7 @@ const GroupLeaderPage = () => {
               <p className="sys-description">See information about the ongoing forms and polls.</p>
             </div>
             {/* Essential Documents */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/sysdocs")}>
               <div className="sys-card-header">
                 <FileText className="sys-icon" />
                 <p className="sys-title">Essential Documents</p>
@@ -73,7 +76,7 @@ const GroupLeaderPage = () => {
               <p className="sys-description">View and download important files shared within your group.</p>
             </div>
             {/* Manage and Create */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/syscreate")}>
               <div className="sys-card-header">
                 <Pencil className="sys-icon" />
                 <p className="sys-title">Manage and create</p>
@@ -81,7 +84,7 @@ const GroupLeaderPage = () => {
               <p className="sys-description">Create and add key information forms, polls, deadlines to assign your group for better organization.</p>
             </div>
             {/* Forms */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/sysforms")}>
               <div className="sys-card-header">
                 <List className="sys-icon" />
                 <p className="sys-title">Forms</p>
@@ -89,7 +92,7 @@ const GroupLeaderPage = () => {
               <p className="sys-description">Quickly fill out, submit, and manage forms assigned to you by your group.</p>
             </div>
             {/* Polls */}
-            <div className="sys-card">
+            <div className="sys-card" onClick={() => navigate("/syspolls")}>
               <div className="sys-card-header">
                 <List className="sys-icon" />
                 <p className="sys-title">Polls</p>
