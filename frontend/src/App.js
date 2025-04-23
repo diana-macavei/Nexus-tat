@@ -20,6 +20,10 @@ import SysPolls from "./pages/SysPolls";
 import Polls from "./pages/Polls";
 import SysCreate from "./pages/SysCreate";
 import GlCreate from "./pages/GlCreate";
+import GlInfo from "./pages/GlInfo";
+import GlForms from "./pages/GlForms";
+import GlPolls from "./pages/GlPolls";
+import GlDocs from "./pages/GlDocs";
 
 
 function App() {
@@ -36,16 +40,16 @@ function App() {
             <Route path="/syspage" element={<SysAdminPage />} />
             <Route path="/account" element={<AccountPage />} />
             <Route path="/sysdocs" element={<SysDocs />} />
-            <Route path="/gldocs" element={<SysDocs />} />
+            <Route path="/gldocs" element={<GlDocs />} />
             <Route path="/docs" element={<Docs />} />
             <Route path="/sysinfo" element={<SysInfo />} />
-            <Route path="/glinfo" element={<SysInfo />} />
+            <Route path="/glinfo" element={<GlInfo />} />
             <Route path="/info" element={<Info />} />
             <Route path="/sysforms" element={<SysForms />} />
-            <Route path="/glforms" element={<SysForms />} />
+            <Route path="/glforms" element={<GlForms />} />
             <Route path="/forms" element={<Forms />} />
             <Route path="/syspolls" element={<SysPolls />} />
-            <Route path="/glpolls" element={<SysPolls />} />
+            <Route path="/glpolls" element={<GlPolls />} />
             <Route path="/polls" element={<Polls />} />
             <Route path="/syscreate" element={<SysCreate />} />
             <Route path="/glcreate" element={<GlCreate />} />

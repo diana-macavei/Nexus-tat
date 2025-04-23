@@ -1,0 +1,160 @@
+/* General Container */
+.gldocs-full-container {
+  min-height: 100vh;
+  background-color: #f2e7fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Navbar */
+.gldocs-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 0.1vh 5vw;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  gap: 4.5vw;
+  height: 8vh; /* Optional: add fixed height */
+}
+
+.gldocs-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;          /* Move it lower */
+  left: 1vw;/* Move it more to the right */
+}
+
+.gldocs-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
+
+/* Content Section */
+.gldocs-content-section {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 2vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+/* Left Buttons */
+.gldocs-left-buttons {
+  margin-top: 18vh;
+  background: #f2e7fb;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex: 1;
+}
+
+.gldocs-button {
+  background: white;
+  padding: 1vh 1vw;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+}
+
+.gldocs-button.active {
+  color: #8a4ddf;
+}
+
+/* Middle Viewer */
+.gldocs-middle-viewer {
+  background: white;
+  padding: 2vh 2vw;
+  border-radius: 0.5rem;
+  flex: 3;
+  overflow-y: scroll;
+
+}
+
+.gldocs-doc-title {
+  font-size: 1.3em;
+  color: #8a4ddf;
+  margin-bottom: 1vh;
+}
+
+.gldocs-doc-content img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Right Docs */
+.gldocs-right-docs {
+  background: #f2e7fb;
+  padding: 2vh 1vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.gldocs-right-title {
+  font-weight: bold;
+  margin-bottom: 2vh;
+  font-size: 1.1rem;
+  max-width: 80%;
+  line-height: 1.4;
+}
+
+.gldocs-doc-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8a4ddf;
+  cursor: pointer;
+  width: 90%;
+  padding: 0.5vh 1vw;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.gldocs-doc-link svg {
+  margin-left: 1vw;
+  color: black;
+}
+
+/* Scrollbar Styling */
+.gldocs-middle-viewer::-webkit-scrollbar {
+
+}
+
+.gldocs-middle-viewer::-webkit-scrollbar-thumb {
+
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gldocs-content-section {
+    flex-direction: column;
+  }
+
+  .gldocs-left-buttons, .gldocs-right-docs {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .gldocs-middle-viewer {
+    order: 3;
+  }
+}

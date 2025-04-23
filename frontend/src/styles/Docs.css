@@ -30,6 +30,21 @@
   left: 1vw;/* Move it more to the right */
 }
 
+.back-icon {
+  color: #8a4ddf;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: -1rem;
+  margin-right: -2.5rem;
+  margin-top: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.back-icon:hover {
+  transform: scale(1.15);
+}
+
+
 .docs-nav-links {
   display: flex;
   gap: 3vw;

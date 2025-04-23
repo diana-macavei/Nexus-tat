@@ -1,0 +1,103 @@
+import React, { useState } from "react";
+import "../styles/GlForms.css";
+import logo from "../assets/nexus.webp";
+import { FaRegFileAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { Home, ArrowLeft } from "lucide-react";
+
+const formEntries = [
+  { no: 1, type: "Group", name: "Form1", date: "03-03-2025", status: "Done" },
+  { no: 2, type: "Group", name: "Form2", date: "12-01-2025", status: "Not Done" },
+  { no: 3, type: "Hub", name: "Form3", date: "05-06-2025", status: "Done" },
+];
+
+const GlFormsPage = () => {
+  const [popupForm, setPopupForm] = useState(null);
+  const navigate = useNavigate();
+
+  return (
+    <div className="glforms-full-container">
+      {/* Navbar */}
+      <div className="glforms-navbar">
+        <img src={logo} alt="Nexus Logo" className="glforms-navbar-logo" />
+        <Home
+            className="back-icon"
+            onClick={() => navigate("/glpage")}
+            title="Back to Dashboard"
+          />
+        <div className="glforms-nav-links">
+          <span>My account</span>
+          <span>Messages</span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="glforms-content-section">
+        {/* Left Buttons */}
+        <div className="glforms-left-buttons">
+          <button className="glforms-button" style={{ color: "black" }}>Group info</button>
+          <button className="glforms-button" style={{ color: "black" }}>Essential data</button>
+          <button className="glforms-button" style={{ color: "black" }}>Manage and create</button>
+          <button className="glforms-button" style={{ color: "black" }}>Key Information</button>
+          <button className="glforms-button" style={{ color: "black" }}>Essential Documents</button>
+          <button className="glforms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
+          <button className="glforms-button" style={{ color: "black" }}>Polls</button>
+        </div>
+
+        {/* Forms Table */}
+        <div className="glforms-forms-section">
+          <h2 className="glforms-title">Ongoing forms</h2>
+          <table className="glforms-table">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Form</th>
+              </tr>
+            </thead>
+            <tbody>
+              {formEntries.map((form, index) => (
+                <tr key={index}>
+                  <td>{form.no}</td>
+                  <td>{form.type}</td>
+                  <td>{form.name}</td>
+                  <td>{form.date}</td>
+                  <td className={form.status === "Done" ? "done" : "not-done"}>
+                    {form.status}
+                  </td>
+                  <td>
+                    <FaRegFileAlt
+                      className="glforms-icon"
+                      onClick={() => setPopupForm(form.name)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Popup Form */}
+      {popupForm && (
+        <div className="glforms-popup">
+          <div className="glforms-popup-content">
+            <button
+              className="glforms-popup-close"
+              onClick={() => setPopupForm(null)}
+            >
+              &times;
+            </button>
+            <h3>{popupForm} Form</h3>
+            <p>Form content goes here...</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default GlFormsPage;

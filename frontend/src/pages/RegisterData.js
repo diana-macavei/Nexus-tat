@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/RegisterData.css";
 import logo from "../assets/nexus.webp";
+import { useNavigate } from "react-router-dom";
+
 
 const RegisterData = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const RegisterData = () => {
     repeatPassword: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -18,6 +22,7 @@ const RegisterData = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Registering user:", formData);
+    navigate("/registerquestion");
   };
 
   return (
