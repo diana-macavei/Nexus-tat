@@ -2,8 +2,10 @@ import React from "react";
 import "../styles/UserPage.css";
 import logo from "../assets/nexus.webp"
 import { Calendar, FileText, Info, List, User, BarChart, Clipboard } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="full-container">
       {/* Navbar with Logo */}
@@ -43,28 +45,28 @@ const UserPage = () => {
         <div className="left-content">
           <h2 className="section-header">Read, complete and submit</h2>
           <div className="card-grid">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/info")}>
               <div className="card-header">
                 <Info className="icon" />
                 <p className="title">Key Information</p>
               </div>
               <p className="description">Updates, announcements, and details about your group’s activities in one place.</p>
             </div>
-            <div className="card">
+            <div className="card" onClick={() => navigate("/docs")}>
               <div className="card-header">
                 <FileText className="icon" />
                 <p className="title">Essential Documents</p>
               </div>
               <p className="description">View and download important files shared within your group.</p>
             </div>
-            <div className="card">
+            <div className="card" onClick={() => navigate("/forms")}>
               <div className="card-header">
                 <List className="icon" />
                 <p className="title">Forms</p>
               </div>
               <p className="description">Quickly fill out, submit, and manage forms assigned to you by your group.</p>
             </div>
-            <div className="card">
+            <div className="card" onClick={() => navigate("/polls")}>
               <div className="card-header">
                 <List className="icon" />
                 <p className="title">Polls</p>
