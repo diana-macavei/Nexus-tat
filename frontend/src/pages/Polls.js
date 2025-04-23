@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Polls.css";
 import logo from "../assets/nexus.webp";
+import { useNavigate } from "react-router-dom";
+import { Home, ArrowLeft } from "lucide-react";
 
 const pollEntries = [
   {
@@ -25,6 +27,7 @@ const pollEntries = [
 
 const PollsPage = () => {
   const [polls, setPolls] = useState(pollEntries);
+  const navigate = useNavigate();
 
   const handleCheckboxChange = (pollIndex, optionIndex) => {
     const updatedPolls = [...polls];
@@ -38,6 +41,11 @@ const PollsPage = () => {
       {/* Navbar */}
       <div className="polls-navbar">
         <img src={logo} alt="Nexus Logo" className="polls-navbar-logo" />
+        <Home
+            className="back-icon"
+            onClick={() => navigate("/userpage")}
+            title="Back to Dashboard"
+          />
         <div className="polls-nav-links">
           <span>My account</span>
           <span>Messages</span>
