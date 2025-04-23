@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/SysForms.css";
 import logo from "../assets/nexus.webp";
 import { FaRegFileAlt } from "react-icons/fa";
+import {Home} from "lucide-react";
+import {useNavigate} from "react-router-dom";
 
 const formEntries = [
   { no: 1, type: "Group", name: "Form1", date: "03-03-2025", status: "Done" },
@@ -11,12 +13,18 @@ const formEntries = [
 
 const SysFormsPage = () => {
   const [popupForm, setPopupForm] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="sysforms-full-container">
       {/* Navbar */}
       <div className="sysforms-navbar">
         <img src={logo} alt="Nexus Logo" className="sysforms-navbar-logo" />
+        <Home
+            className="back-icon"
+            onClick={() => navigate("/syspage")}
+            title="Back to Dashboard"
+        />
         <div className="sysforms-nav-links">
           <span>My account</span>
           <span>Messages</span>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/SysDocs.css";
 import logo from "../assets/nexus.webp";
+import { useNavigate } from "react-router-dom";
+import { Home, ArrowLeft } from "lucide-react";
 
 const documents = [
   {
@@ -15,12 +17,18 @@ const documents = [
 
 const SysDocsPage = () => {
   const [selectedDoc, setSelectedDoc] = useState(documents[0]);
+  const navigate = useNavigate();
 
   return (
     <div className="sysdocs-full-container">
       {/* Navbar */}
       <div className="sysdocs-navbar">
         <img src={logo} alt="Nexus Logo" className="sysdocs-navbar-logo" />
+        <Home
+            className="back-icon"
+            onClick={() => navigate("/syspage")}
+            title="Back to Dashboard"
+        />
         <div className="sysdocs-nav-links">
           <span>My account</span>
           <span>Messages</span>
