@@ -1,15 +1,45 @@
 import React, {useState} from "react";
 import "../styles/Login.css";
 import logo from "../assets/nexus.webp"
+import {useNavigate} from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Logging in with:", email, password);
+      e.preventDefault();
+
+      fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+
+            const decoded = jwtDecode(data.token);
+            const role = decoded.role;
+
+            // ✅ Route based on role
+            if (role === "user") navigate("/userpage");
+            else if (role === "sysadmin") navigate("/syspage");
+            else if (role === "groupleader") navigate("/glpage");
+            else navigate("/user"); // default fallback
+          } else {
+            alert("Login failed.");
+          }
+        })
+        .catch((err) => {
+          console.error("Login error:", err);
+          alert("Something went wrong.");
+        });
     };
+
 
     return (
         <div className="login-container">

@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Pages
 import Login from "./pages/Login";
 import RegisterData from "./pages/RegisterData";
 import RegisterQuestion from "./pages/RegisterQuestion";
@@ -24,39 +25,164 @@ import GlInfo from "./pages/GlInfo";
 import GlForms from "./pages/GlForms";
 import GlPolls from "./pages/GlPolls";
 import GlDocs from "./pages/GlDocs";
+import Unauthorized from "./pages/Unauthorized";
 
+// Components
+import LogoutButton from "./components/LogoutButton";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
+function InnerApp() {
+  const location = useLocation();
+
+  const showLogout = ["/userpage", "/glpage", "/syspage"].includes(location.pathname);
+
   return (
-    <div className="App">
+    <div className="App" style={{ position: "relative", minHeight: "100vh" }}>
       <ToastContainer />
-      <Router>
-        <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/registerdata" element={<RegisterData />} />
-            <Route path="/registerquestion" element={<RegisterQuestion />} />
-            <Route path="/userpage" element={<UserPage />} />
-            <Route path="/glpage" element={<GroupLeaderPage />} />
-            <Route path="/syspage" element={<SysAdminPage />} />
-            <Route path="/account" element={<AccountPage />} />
-            <Route path="/sysdocs" element={<SysDocs />} />
-            <Route path="/gldocs" element={<GlDocs />} />
-            <Route path="/docs" element={<Docs />} />
-            <Route path="/sysinfo" element={<SysInfo />} />
-            <Route path="/glinfo" element={<GlInfo />} />
-            <Route path="/info" element={<Info />} />
-            <Route path="/sysforms" element={<SysForms />} />
-            <Route path="/glforms" element={<GlForms />} />
-            <Route path="/forms" element={<Forms />} />
-            <Route path="/syspolls" element={<SysPolls />} />
-            <Route path="/glpolls" element={<GlPolls />} />
-            <Route path="/polls" element={<Polls />} />
-            <Route path="/syscreate" element={<SysCreate />} />
-            <Route path="/glcreate" element={<GlCreate />} />
-        </Routes>
-      </Router>
+
+      {/* Logout button only on allowed pages */}
+      {showLogout && (
+        <div style={{
+          position: "absolute",
+          top: "1rem",
+          right: "1.5rem",
+          zIndex: 1000
+        }}>
+          <LogoutButton />
+        </div>
+      )}
+
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/registerdata" element={<RegisterData />} />
+        <Route path="/registerquestion" element={<RegisterQuestion />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
+
+        {/* Protected Routes */}
+        <Route
+          path="/userpage"
+          element={
+            <ProtectedRoute allowedRoles={["user"]}>
+              <UserPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/glpage"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GroupLeaderPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/gldocs"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GlDocs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/glinfo"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GlInfo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/glforms"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GlForms />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/glpolls"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GlPolls />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/glcreate"
+          element={
+            <ProtectedRoute allowedRoles={["groupleader", "sysadmin"]}>
+              <GlCreate />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/syspage"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysAdminPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sysdocs"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysDocs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sysinfo"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysInfo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sysforms"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysForms />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/syspolls"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysPolls />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/syscreate"
+          element={
+            <ProtectedRoute allowedRoles={["sysadmin"]}>
+              <SysCreate />
+            </ProtectedRoute>
+          }
+        />
+
+
+
+        {/* Other shared routes */}
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/forms" element={<Forms />} />
+        <Route path="/polls" element={<Polls />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <InnerApp />
+    </Router>
+  );
+}
