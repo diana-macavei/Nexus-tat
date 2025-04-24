@@ -9,6 +9,7 @@ const RegisterData = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     password: "",
     repeatPassword: "",
   });
@@ -20,10 +21,34 @@ const RegisterData = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Registering user:", formData);
-    navigate("/registerquestion");
-  };
+      e.preventDefault();
+
+      fetch("http://localhost:5000/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.token) {
+            localStorage.setItem("token", data.token); // ✅ store token
+            navigate("/registerquestion"); // ✅ go to next step
+          } else {
+            alert("Registration failed.");
+          }
+        })
+        .catch((err) => {
+          console.error("Registration error:", err);
+          alert("Something went wrong.");
+        });
+    };
+
 
   return (
     <div className="register-container">
@@ -53,6 +78,13 @@ const RegisterData = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Phone number"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           required
         />
         <input

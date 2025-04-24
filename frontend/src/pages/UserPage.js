@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/UserPage.css";
-import logo from "../assets/nexus.webp"
+import logo from "../assets/nexus.webp";
 import { Calendar, FileText, Info, List, User, BarChart, Clipboard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const res = await fetch("http://localhost:5000/api/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await res.json();
+        setUser(data);
+      } catch (err) {
+        console.error("User fetch error:", err);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
   return (
     <div className="full-container">
       {/* Navbar with Logo */}
@@ -26,7 +47,10 @@ const UserPage = () => {
             <User className="profile-icon" />
           </div>
           <div className="user-info">
-            <p className="profile-name">Name</p>
+            {/* 👇 Replaces static "Name" */}
+            <p className="profile-name">
+              {user ? `${user.first_name} ${user.last_name}` : "Loading..."}
+            </p>
             <p className="profile-group">Group name</p>
             <p className="profile-group">Semigroup name</p>
           </div>
@@ -41,7 +65,6 @@ const UserPage = () => {
 
       {/* Main Content Section */}
       <div className="content-section">
-        {/* Left Side - Key Info, Documents, Forms, Polls */}
         <div className="left-content">
           <h2 className="section-header">Read, complete and submit</h2>
           <div className="card-grid">
@@ -79,7 +102,7 @@ const UserPage = () => {
         {/* Right Side - Notifications and Timeline */}
         <div className="right-content">
           <div className="notifications">
-           <p className="section-title">Notifications</p>
+            <p className="section-title">Notifications</p>
             <div className="notification-item">
               <BarChart className="icon" /> GroupLeader added a new poll!
             </div>
@@ -92,14 +115,12 @@ const UserPage = () => {
           </div>
 
           <div className="timeline">
-            {/* Purple Header Section */}
             <div className="timeline-header">
               <p>Now:</p>
               <p>Due:</p>
               <p>Time remaining:</p>
             </div>
 
-            {/* Timeline Content */}
             <div className="timeline-body">
               <p className="timeline-title">Timeline</p>
               <p>All due @ 11:59 PM</p>
@@ -116,8 +137,8 @@ const UserPage = () => {
             </div>
           </div>
         </div>
+      </div>
     </div>
-  </div>
   );
 };
 
