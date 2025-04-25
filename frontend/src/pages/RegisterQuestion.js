@@ -12,6 +12,48 @@ const RegisterQuestion = () => {
   };
 
   const handleSubmit = (e) => {
+      e.preventDefault();
+
+      if (!selectedOption) {
+        alert("Please select an option");
+        return;
+      }
+
+      const token = localStorage.getItem("token");
+          let role = "";
+          if (selectedOption === "join-group") {
+            role = "user";
+          } else if (selectedOption === "create-group") {
+            role = "sysadmin";
+          } else {
+            alert("Invalid option selected.");
+            return;
+          }
+
+          fetch("http://localhost:5000/api/role", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ role }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("Role saved:", data.message);
+
+              // Redirect based on role
+              if (role === "user") {
+                navigate("/userpage");
+              } else if (role === "sysadmin") {
+                navigate("/syspage");
+              }
+            })
+            .catch((err) => {
+              console.error("Role save error:", err);
+              alert("Couldn't save your role.");
+            });
+        };
   e.preventDefault();
 
   if (!selectedOption) {
