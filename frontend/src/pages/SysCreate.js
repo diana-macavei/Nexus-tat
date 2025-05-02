@@ -16,6 +16,7 @@ const SysCreatePage = () => {
   const navigate = useNavigate();
   const [formTitle, setFormTitle] = useState("");
   const [formUrl, setFormUrl] = useState("");
+  const [formDeadline, setFormDeadline] = useState("");
   const [docTitle, setDocTitle] = useState("");
   const [docUrl, setDocUrl] = useState("");
   const [keyInfoTitle, setKeyInfoTitle] = useState("");
@@ -76,7 +77,7 @@ const SysCreatePage = () => {
               title: formTitle,
               form_url: formUrl,
               type: formType,          // ✅ Dynamic value here
-              deadline: null,
+              deadline: formDeadline || null,
               created_by: userId,           // Replace with actual user id
               group_id: formType === "Group" ? 2 : null // Replace with real group id or null
             }),
@@ -314,7 +315,8 @@ const SysCreatePage = () => {
                 <input
                   className="syscreate-deadline-input"
                   type="datetime-local"
-                  required
+                  value={formDeadline}
+                  onChange={(e) => setFormDeadline(e.target.value)}
                 />
               </div>
             </div>
