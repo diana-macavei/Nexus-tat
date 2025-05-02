@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/RegisterData.css";
 import logo from "../assets/nexus.webp";
 import { useNavigate } from "react-router-dom";
@@ -12,9 +12,19 @@ const RegisterData = () => {
     phone: "",
     password: "",
     repeatPassword: "",
+    groupId: "",
   });
 
   const navigate = useNavigate();
+  const [groups, setGroups] = useState([]); // ✅ NEW state for groups
+
+  useEffect(() => {
+    // ✅ Fetch groups from backend
+    fetch("http://localhost:5000/api/groups")
+      .then(res => res.json())
+      .then(data => setGroups(data))
+      .catch(err => console.error("Failed to fetch groups:", err));
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,6 +42,8 @@ const RegisterData = () => {
           email: formData.email,
           phone: formData.phone,
           password: formData.password,
+          groupId: formData.groupId,
+
         }),
       })
         .then((res) => res.json())
@@ -103,6 +115,17 @@ const RegisterData = () => {
           onChange={handleChange}
           required
         />
+
+        {/* Select group dynamically */}
+        <select name="groupId" value={formData.groupId} onChange={handleChange} required>
+          <option value="">Select your group</option>
+          {groups.map(group => (
+            <option key={group.id} value={group.id}>
+              {group.name}
+            </option>
+          ))}
+        </select>
+
         <button type="submit">Continue</button>
       </form>
 

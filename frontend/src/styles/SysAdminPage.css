@@ -23,6 +23,97 @@
   gap: 7.5%;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sys-settings-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.sys-settings-content {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  width: 90vw;
+  max-width: 30rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Inputs and buttons smaller */
+.sys-settings-content input {
+  width: 80%;
+  max-width: 20rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.sys-settings-content button {
+  width: 80%;
+  max-width: 20rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #8a4ddf;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.sys-settings-content button:hover {
+  background-color: #722bdc;
+}
+
+/* Close Button X */
+.sys-close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #8a4ddf; /* Purple color */
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sys-close-button:hover {
+  background-color: #732ecc;
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
 /* Logo */
 .sys-navbar-logo {
   position: absolute;

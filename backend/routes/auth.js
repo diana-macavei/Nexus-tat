@@ -8,7 +8,7 @@ const authenticateToken = require("../middleware/authMiddleware");
 require("dotenv").config();
 
 router.post("/register", async (req, res) => {
-  const { firstName, lastName, email, phone, password } = req.body;
+  const { firstName, lastName, email, phone, password, groupId } = req.body;
 
   try {
     // Check if user exists
@@ -29,11 +29,12 @@ router.post("/register", async (req, res) => {
 
     // Insert into DB
     const newUser = await pool.query(
-      `INSERT INTO users (first_name, last_name, email, phone, password, role)
-       VALUES ($1, $2, $3, $4, $5, $6)
+      `INSERT INTO users (first_name, last_name, email, phone, password, role, group_id)
+       VALUES ($1, $2, $3, $4, $5, $6, $7)
        RETURNING id, email`,
-      [firstName, lastName, email, phone, hashedPassword, "student"]
+      [firstName, lastName, email, phone, hashedPassword, "user", groupId]
     );
+
 
     // Generate JWT
     const token = jwt.sign(
@@ -109,6 +110,18 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Server error." });
   }
 });
+
+// GET all groups
+router.get("/groups", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT id, name FROM groups");
+    res.json(result.rows);
+  } catch (err) {
+    console.error("Error fetching groups:", err.message);
+    res.status(500).json({ message: "Error fetching groups." });
+  }
+});
+
 
 module.exports = router;
 

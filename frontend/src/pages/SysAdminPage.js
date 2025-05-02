@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/SysAdminPage.css";
 import logo from "../assets/nexus.webp";
 import { Calendar, FileText, Info, List, User, BarChart, Clipboard, Pencil, Users } from "lucide-react";
@@ -7,6 +7,59 @@ import { useNavigate } from "react-router-dom";
 
 const GroupLeaderPage = () => {
   const navigate = useNavigate();
+  const [showSettings, setShowSettings] = useState(false);
+  const [newGroupName, setNewGroupName] = useState("");
+  const [groupLeaderEmail, setGroupLeaderEmail] = useState("");
+
+  const handleCreateGroup = async () => {
+    if (!newGroupName) {
+      alert("Please enter a group name.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/groups", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: newGroupName,
+          groupLeaderEmail: groupLeaderEmail || null,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Group created successfully!");
+        setShowSettings(false);
+        setNewGroupName("");
+        setGroupLeaderEmail("");
+      } else {
+        const data = await response.json();
+        alert("Error: " + data.message);
+      }
+    } catch (err) {
+      console.error(err.message);
+      alert("Something went wrong.");
+    }
+  };
+
+  // Close modal on ESC key
+  React.useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        setShowSettings(false);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Click outside to close
+  const handleOutsideClick = () => {
+    setShowSettings(false);
+  };
+
+
   return (
     <div className="sys-full-container">
       {/* Navbar */}
@@ -17,8 +70,36 @@ const GroupLeaderPage = () => {
         <div className="sys-nav-links">
           <span>My account</span>
           <span>Messages</span>
+          <span onClick={() => setShowSettings(true)}>Settings</span>
         </div>
       </div>
+
+      {showSettings && (
+        <div className="sys-settings-modal" onClick={handleOutsideClick}>
+          <div className="sys-settings-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Create a Group</h2>
+
+            <input
+              type="text"
+              placeholder="Group Name"
+              value={newGroupName}
+              onChange={(e) => setNewGroupName(e.target.value)}
+            />
+
+            <input
+              type="email"
+              placeholder="Group Leader Email (optional)"
+              value={groupLeaderEmail}
+              onChange={(e) => setGroupLeaderEmail(e.target.value)}
+            />
+
+            <button onClick={handleCreateGroup}>Create Group</button>
+            <button onClick={() => setShowSettings(false)}>Cancel</button>
+          </div>
+        </div>
+      )}
+
+
 
       {/* Profile Section */}
       <div className="sys-profile-section">
@@ -146,5 +227,6 @@ const GroupLeaderPage = () => {
     </div>
   );
 };
+
 
 export default GroupLeaderPage;
