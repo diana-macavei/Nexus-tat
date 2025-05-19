@@ -18,7 +18,9 @@ const NOTIFS_PER_PAGE = 5;
 const UserPage = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
-  const [groupName, setGroupName] = useState("");
+  const [groupName, setGroupName] = useState("Group name");
+  const [semigroupName, setSemigroupName] = useState("Semigroup name");
+  const [secretary, setSecretary] = useState("Secretary name and phone no.");
   const [groupLeaderName, setGroupLeaderName] = useState("");
   const [sysAdminName, setSysAdminName] = useState("");
   const [notifications, setNotifications] = useState([]);
@@ -122,9 +124,9 @@ const UserPage = () => {
             <User className="profile-icon" />
           </div>
           <div className="user-info">
-            <p className="profile-name">{userName}</p>
-            <p className="profile-group">{groupName}</p>
-            <p className="profile-group">Semigroup name</p>
+            <p className="gl-profile-name"><span style={{ fontWeight: 500 }}>Name:</span> {userName}</p>
+            <p className="gl-profile-group"><span style={{ fontWeight: 500 }}>Group Name:</span> {groupName}</p>
+            <p className="gl-profile-group"><span style={{ fontWeight: 500 }}>Semigroup Name:</span>{semigroupName}</p>
           </div>
         </div>
         <div className="profile-info-box">
