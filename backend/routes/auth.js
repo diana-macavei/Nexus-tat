@@ -65,6 +65,12 @@ router.put("/role", authenticateToken, async (req, res) => {
       [role, userId]
     );
 
+    const newToken = jwt.sign(
+      { userId: userId, role: role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
     if (updateResult.rows.length === 0) {
       console.warn("⚠️ No user found with ID", userId);
       return res.status(404).json({ message: "User not found." });
@@ -97,7 +103,7 @@ router.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       { userId: user.rows[0].id,
-      role: user.rows[0].role,
+      role: user.rows[0].role.toLowerCase(),
       },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }

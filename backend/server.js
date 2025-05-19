@@ -7,7 +7,9 @@ const documentRoutes = require("./routes/documents");
 const keyInfoRoutes = require("./routes/keyinfo");
 const groupRoutes = require("./routes/groups");
 const pollRoutes = require("./routes/polls");
-
+const userRoutes = require("./routes/users");
+const notificationsRoutes = require("./routes/notifications");
+const deadlineRoutes = require("./routes/deadlines");
 
 const app = express();
 
@@ -22,7 +24,9 @@ app.use("/api", documentRoutes);
 app.use("/api", keyInfoRoutes);
 app.use("/api", groupRoutes);
 app.use("/api", pollRoutes);
-
+app.use("/api", userRoutes);
+app.use("/api/notifications", notificationsRoutes);
+app.use("/api/deadlines", deadlineRoutes);
 
 
 
