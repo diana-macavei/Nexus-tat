@@ -152,6 +152,8 @@ const SysCreatePage = () => {
 
       const decoded = jwtDecode(token);
       const userId = decoded.userId;
+      const userRole= decoded.role;
+      const groupId= decoded.group_id || null;
 
       try {
         const response = await fetch("http://localhost:5000/api/keyinfo", {
@@ -161,7 +163,9 @@ const SysCreatePage = () => {
             title: keyInfoTitle,
             content: keyInfoContent,
             posted_by: userId,
-            created_at: new Date().toISOString()
+            created_at: new Date().toISOString(),
+            type: userRole === "sysadmin" ? "Hub" : "Group",
+            group_id: groupId // pass null for sysadmin
           }),
         });
 

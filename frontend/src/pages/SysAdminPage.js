@@ -114,6 +114,7 @@ const GroupLeaderPage = () => {
           </div>
         </div>
         <div className="sys-profile-info-box">
+          <p>Semigroup coordinator name</p>
           <p>Secretary name and phone no.</p>
         </div>
       </div>

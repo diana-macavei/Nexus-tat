@@ -50,7 +50,11 @@ const GlCreatePage = () => {
 
     const decoded = jwtDecode(token);
     const userId = decoded.userId;
-    const groupId = decoded.group_id || null;
+
+    // Fetch full user details to get group_id
+    const userRes = await fetch(`http://localhost:5000/api/users/${userId}`);
+    const userData = await userRes.json();
+    const groupId = userData.group_id;
 
     try {
       const res = await fetch("http://localhost:5000/api/forms", {
@@ -90,6 +94,15 @@ const GlCreatePage = () => {
     const userId = decoded.userId;
 
     try {
+      // ✅ fetch the user from the backend to get group_id
+      const userRes = await fetch(`http://localhost:5000/api/users/${userId}`);
+      const userData = await userRes.json();
+      console.log("✅ Full userData from backend:", userData);
+
+      const groupId = userData.group_id;
+
+      console.log("🔍 groupId fetched from API:", groupId);
+
       const res = await fetch("http://localhost:5000/api/keyinfo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -97,9 +110,12 @@ const GlCreatePage = () => {
           title: keyInfoTitle,
           content: keyInfoContent,
           posted_by: userId,
-          created_at: new Date().toISOString()
-        })
+          created_at: new Date().toISOString(),
+          type: "Group",
+
+        }),
       });
+
       if (res.ok) {
         alert("Key info posted");
         setKeyInfoTitle("");
@@ -108,9 +124,13 @@ const GlCreatePage = () => {
         alert("Error posting key info");
       }
     } catch (err) {
+      console.error("❌ Error in handleKeyInfoSubmit:", err);
       alert("Server error");
     }
   };
+
+
+
 
   const handlePollSubmit = async () => {
     if (!pollQuestion || options.length < 2) {

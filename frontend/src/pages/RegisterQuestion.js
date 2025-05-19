@@ -40,7 +40,9 @@ const RegisterQuestion = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("Role saved:", data.message);
+          console.log("Role saved:", role , data.message);
+
+          localStorage.setItem("token", data.token);
 
           // Redirect based on role
           if (role === "user") {
