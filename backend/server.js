@@ -27,6 +27,8 @@ app.use("/api", pollRoutes);
 app.use("/api", userRoutes);
 app.use("/api/notifications", notificationsRoutes);
 app.use("/api/deadlines", deadlineRoutes);
+app.use("/uploads", express.static("uploads"));
+
 
 
 

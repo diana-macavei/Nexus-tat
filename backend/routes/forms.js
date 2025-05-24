@@ -57,4 +57,27 @@ router.post("/forms", async (req, res) => {
   }
 });
 
+// 🔻 GET: fetch forms by type (hub or group)
+router.get("/forms", async (req, res) => {
+  const { type } = req.query;
+
+  try {
+    const normalizedType = (type || "").toLowerCase();
+
+    const query = `
+      SELECT * FROM forms
+      WHERE LOWER(type) = $1
+      ORDER BY deadline DESC
+    `;
+
+    const result = await pool.query(query, [normalizedType]);
+    res.json(result.rows);
+
+  } catch (err) {
+    console.error("❌ Error fetching forms:", err);
+    res.status(500).json({ error: "Failed to load forms" });
+  }
+});
+
+
 module.exports = router;
