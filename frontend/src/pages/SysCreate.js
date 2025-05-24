@@ -25,6 +25,7 @@ const SysCreatePage = () => {
   const [pollDeadline, setPollDeadline] = useState("");
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [allowMultiple, setAllowMultiple] = useState(false);
+  const [docFile, setDocFile] = useState(null);
 
 
 
@@ -79,7 +80,7 @@ const SysCreatePage = () => {
               type: formType,          // ✅ Dynamic value here
               deadline: formDeadline || null,
               created_by: userId,           // Replace with actual user id
-              group_id: formType === "Group" ? 2 : null // Replace with real group id or null
+              group_id: formType === "Group" ? groupId : null
             }),
           });
 
@@ -98,8 +99,8 @@ const SysCreatePage = () => {
       };
 
     const handleDocSubmit = async () => {
-      if (!docTitle || !docUrl) {
-        alert("Please fill in both title and link.");
+      if (!docTitle || !docFile) {
+        alert("Please fill in both title and file.");
         return;
       }
 
@@ -110,26 +111,42 @@ const SysCreatePage = () => {
       }
 
       const decoded = jwtDecode(token);
-      const userId = decoded.userId; // match your backend token field
+      const userId = decoded.userId;
 
       try {
-        const response = await fetch("http://localhost:5000/api/documents", {
+        // 1. Upload the file first
+        const formData = new FormData();
+        formData.append("file", docFile);
+
+        const uploadRes = await fetch("http://localhost:5000/api/documents/upload", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            title: docTitle,
-            file_url: docUrl,
-            uploaded_by: userId,
-            upload_date: new Date().toISOString()
-          }),
+          body: formData,
         });
 
-        if (response.ok) {
+        const uploadData = await uploadRes.json();
+        const fileUrl = uploadData.fileUrl;
+
+        // 2. Save the document in DB
+        const saveRes = await fetch("http://localhost:5000/api/documents", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            title: docTitle,
+            file_url: fileUrl,
+            uploaded_by: userId,
+            upload_date: new Date().toISOString(),
+            type: decoded.role === "sysadmin" ? "hub" : "group"
+          })
+        });
+
+        if (saveRes.ok) {
           alert("Document added!");
           setDocTitle("");
-          setDocUrl("");
+          setDocFile(null);
         } else {
-          const data = await response.json();
+          const data = await saveRes.json();
           alert("Error: " + data.error);
         }
       } catch (err) {
@@ -137,6 +154,7 @@ const SysCreatePage = () => {
         alert("Something went wrong.");
       }
     };
+
 
     const handleKeyInfoSubmit = async () => {
       if (!keyInfoTitle || !keyInfoContent) {
@@ -343,11 +361,9 @@ const SysCreatePage = () => {
             <div className="syscreate-options">
               <div className="syscreate-option-item" style={{ width: "100%" }}>
                 <input
-                  type="text"
+                  type="file"
                   className="syscreate-option-input"
-                  placeholder="Information"
-                  value={docUrl}
-                  onChange={(e) => setDocUrl(e.target.value)}
+                  onChange={(e) => setDocFile(e.target.files[0])}
                 />
                 <img
                   src={linkIcon}

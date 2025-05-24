@@ -21,6 +21,42 @@
   height: 8vh;
 }
 
+
+.sysinfo-doc-link {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #333;
+  margin: 0.8rem 0;
+  position: relative;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.sysinfo-doc-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #8a4ddf;
+  transition: width 0.3s ease;
+}
+
+.sysinfo-doc-link:hover {
+  color: #8a4ddf;
+  letter-spacing: 0.5px;
+}
+
+.sysinfo-doc-link:hover::after {
+  width: 100%;
+}
+
+.sysinfo-doc-link.active {
+  color: #8a4ddf;
+  font-weight: 600;
+}
+
+
 .sysinfo-navbar-logo {
   width: 6vw;
   border-radius: 0.5rem;
@@ -143,12 +179,7 @@
   text-align: left;
 }
 
-.sysinfo-doc-link {
-  color: #8a4ddf;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-}
+
 
 .sysinfo-middle-viewer::-webkit-scrollbar {
   width: 0.6rem;

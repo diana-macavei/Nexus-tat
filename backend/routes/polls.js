@@ -71,4 +71,42 @@ router.post("/polls", async (req, res) => {
   }
 });
 
+// 🔻 GET: fetch polls by type (hub or group)
+router.get("/polls", async (req, res) => {
+  const { type } = req.query;
+
+  try {
+    const normalizedType = (type || "").toLowerCase();
+
+    const pollQuery = `
+      SELECT * FROM polls
+      WHERE LOWER(type) = $1
+      ORDER BY deadline DESC
+    `;
+
+    const pollsRes = await pool.query(pollQuery, [normalizedType]);
+    const polls = pollsRes.rows;
+
+    // Fetch and attach options to each poll
+    const pollsWithOptions = await Promise.all(
+      polls.map(async (poll) => {
+        const optionsRes = await pool.query(
+          "SELECT option_text FROM poll_options WHERE poll_id = $1",
+          [poll.id]
+        );
+        return {
+          ...poll,
+          options: optionsRes.rows,
+        };
+      })
+    );
+
+    res.json(pollsWithOptions);
+  } catch (err) {
+    console.error("❌ Error fetching polls:", err);
+    res.status(500).json({ error: "Failed to fetch polls" });
+  }
+});
+
+
 module.exports = router;
