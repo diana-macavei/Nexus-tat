@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
-import "../styles/SysForms.css";
+import React, { useEffect, useState } from "react";
+import "../styles/GlForms.css";
 import logo from "../assets/nexus.webp";
 import { FaRegFileAlt } from "react-icons/fa";
 import { Home } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
-const SysFormsPage = () => {
+const GlFormsPage = () => {
   const [forms, setForms] = useState([]);
   const [groupId, setGroupId] = useState(null);
   const navigate = useNavigate();
@@ -31,8 +31,6 @@ const SysFormsPage = () => {
       try {
         const res = await fetch("http://localhost:5000/api/forms?type=hub");
         const data = await res.json();
-
-        console.log("✅ All raw forms:", data);
 
         const filtered = data.filter(
           (form) => form.group_id === null || form.group_id === groupId
@@ -73,34 +71,38 @@ const SysFormsPage = () => {
   };
 
   return (
-    <div className="sysforms-full-container">
-      <div className="sysforms-navbar">
-        <img src={logo} alt="Nexus Logo" className="sysforms-navbar-logo" />
+    <div className="glforms-full-container">
+      {/* Navbar */}
+      <div className="glforms-navbar">
+        <img src={logo} alt="Nexus Logo" className="glforms-navbar-logo" />
         <Home
           className="back-icon"
-          onClick={() => navigate("/syspage")}
+          onClick={() => navigate("/glpage")}
           title="Back to Dashboard"
         />
-        <div className="sysforms-nav-links">
+        <div className="glforms-nav-links">
           <span>My account</span>
           <span>Messages</span>
         </div>
       </div>
 
-      <div className="sysforms-content-section">
-        <div className="sysforms-left-buttons">
-          <button className="sysforms-button" style={{ color: "black" }}>Hub info</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Essential data</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Manage and create</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Key Information</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Essential Documents</button>
-          <button className="sysforms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
-          <button className="sysforms-button" style={{ color: "black" }}>Polls</button>
+      {/* Content */}
+      <div className="glforms-content-section">
+        {/* Left Buttons */}
+        <div className="glforms-left-buttons">
+          <button className="glforms-button" style={{ color: "black" }}>Group info</button>
+          <button className="glforms-button" style={{ color: "black" }}>Essential data</button>
+          <button className="glforms-button" style={{ color: "black" }}>Manage and create</button>
+          <button className="glforms-button" style={{ color: "black" }}>Key Information</button>
+          <button className="glforms-button" style={{ color: "black" }}>Essential Documents</button>
+          <button className="glforms-button active" style={{ color: "#8a4ddf" }}>Forms</button>
+          <button className="glforms-button" style={{ color: "black" }}>Polls</button>
         </div>
 
-        <div className="sysforms-forms-section">
-          <h2 className="sysforms-title">Ongoing forms</h2>
-          <table className="sysforms-table">
+        {/* Forms Table */}
+        <div className="glforms-forms-section">
+          <h2 className="glforms-title">Ongoing forms</h2>
+          <table className="glforms-table">
             <thead>
               <tr>
                 <th>No.</th>
@@ -137,7 +139,7 @@ const SysFormsPage = () => {
                         rel="noopener noreferrer"
                         title="Open Form"
                       >
-                        <FaRegFileAlt className="sysforms-icon" />
+                        <FaRegFileAlt className="glforms-icon" />
                       </a>
                     </td>
                   </tr>
@@ -151,4 +153,4 @@ const SysFormsPage = () => {
   );
 };
 
-export default SysFormsPage;
+export default GlFormsPage;

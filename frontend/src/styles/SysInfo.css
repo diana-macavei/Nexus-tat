@@ -21,6 +21,21 @@
   height: 8vh;
 }
 
+.sysinfo-navbar-logo {
+  width: 6vw;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 4vh;
+  left: 1vw;
+}
+
+.sysinfo-nav-links {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5vh;
+}
 
 .sysinfo-doc-link {
   cursor: pointer;
@@ -54,23 +69,6 @@
 .sysinfo-doc-link.active {
   color: #8a4ddf;
   font-weight: 600;
-}
-
-
-.sysinfo-navbar-logo {
-  width: 6vw;
-  border-radius: 0.5rem;
-  position: relative;
-  top: 4vh;
-  left: 1vw;
-}
-
-.sysinfo-nav-links {
-  display: flex;
-  gap: 3vw;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 0.5vh;
 }
 
 .sysinfo-content-section {

@@ -37,6 +37,42 @@
   margin-top: 0.5vh;
 }
 
+.info-doc-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #8a4ddf;
+  transition: width 0.3s ease;
+}
+
+.info-doc-link:hover {
+  color: #8a4ddf;
+  letter-spacing: 0.5px;
+}
+
+.info-doc-link:hover::after {
+  width: 100%;
+}
+
+.info-doc-link.active {
+  color: #8a4ddf;
+  font-weight: 600;
+}
+
+.info-doc-link {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #333;
+  margin: 0.8rem 0;
+  position: relative;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+
+
 .sysinfo-content-section {
   display: flex;
   width: 100%;
