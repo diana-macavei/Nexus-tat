@@ -34,61 +34,67 @@
 }
 
 /* Navigation Links */
-.gl-nav-links {
+.navbar .nav-links {
+  margin-left: auto;
+  margin-right: 150rem; /* push 'My account' and 'Messages' further right */
   display: flex;
-  gap: 4vh;
-  font-size: 1.4em;
+  gap: 2rem;
+  font-size: 1.1rem;
   font-weight: bold;
+  align-items: center;
 }
 
 /* Profile Section */
-.gl-profile-section {
+.profile-section {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
   width: 100%;
-  max-width: 100%;
-  gap: 40%;
-  margin-top: 5%;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
-/* pfp circle */
-.gl-profile-card {
-  width: 30vh;
-  height: 30vh;
-  border-radius: 50%;
-  background: white;
+.profile-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 10%;
-  left: 7%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-/* name, group, semigroup */
-.gl-user-info {
+.profile-card {
+  margin-top: 10px;
+  margin-left: -160px; /* Adjust this value as needed */
+}
+
+.user-info {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  font-size: 1.4em;
-  position: absolute;
-  top: 15%;
-  left: 25vw;
+  font-size: 1.1rem;
+  margin-top: 60px;
+  margin-left: 1rem;
+  align-items: flex-start;
+  text-align: center;
 }
 
-/* sys, semigroup, secretary */
-.gl-profile-info-box {
-  background: white;
-  padding: 1%;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 35%;
-  font-size: 1.4em;
-  font-weight: bold;
-  max-height: 22vh;
-  margin-top: -0.2%;
+.profile-info-box {
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(138,77,223,0.07);
+  padding: 0.5rem 1rem;
+  font-size: 0.97rem;
+  font-weight: 600;
+  text-align: flex-start;
+  flex-shrink: 1;
+  margin-bottom: 0 !important;
+  margin-top: -1rem !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Main Content */
@@ -225,19 +231,29 @@
 .gl-right-content {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
-  flex: 1;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: stretch;
+  gap: 2rem;
 }
 
 /* Notifications */
-.gl-notifications {
-  margin-top: 8%;
-  margin-left: 10%;
+.notifications {
+  margin-top: 8rem;
   background: white;
   padding: 2%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 40%;
+  width: 100%;
+}
+
+.profile-header-row, .profile-card-row {
+  margin-bottom: 0 rem; /* Reduce this value as needed */
+}
+
+.section-header {
+  margin-top: -1.8rem !important;
+  margin-left: -29rem;
 }
 
 .gl-section-title {
@@ -252,23 +268,17 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 /* Timeline */
-.gl-timeline {
-  margin-top: 0.5%;
-  margin-left: 10%;
+.timeline {
   background: white;
   border-radius: 10px;
-  padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1rem;
 }
 
 /* Timeline Header */
@@ -356,4 +366,134 @@
   font-size: 1.3em;
   color: #333;
   line-height: 1.5;
+}
+
+.gl-manage-group-columns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(4 * 140px + 3 * 1rem);
+  position: relative;
+}
+
+.gl-manage-group-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 340px;
+  max-width: 340px;
+  width: 340px;
+}
+
+.gl-manage-group-col:first-child {
+  height: 100%;
+  justify-content: flex-start;
+  margin-top: calc((140px + 1rem) / 2);
+}
+
+.card {
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.left-content {
+  align-items: center;
+  width: 100%;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.left-content, .right-content {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: stretch;
+  gap: 2rem;
+  padding-top: 4rem; /* pushes notifications lower */
+}
+
+.timeline {
+  margin-top: 1rem !important;
+  text-align: center;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: -0.5rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.timeline-body p:nth-child(2) {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.notification-item {
+  font-size: 0.9rem;
+}
+
+.notifications {
+  width: 380px;
+  min-width: 380px;
+  max-width: 380px;
+  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+  margin-top: 9rem !important; /* lower it in the column */
+  font-size: 0.9rem; /* make notification text smaller */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.1rem; /* reduce space below title */
+}
+
+.card .description {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0; /* remove extra space above content */
+  line-height: 1.3;
 }
