@@ -110,74 +110,73 @@ const GroupLeaderPage = () => {
   );
 
   return (
-    <div className="full-container">
-      <div className="navbar">
+    <div className="gl-full-container">
+      <div className="gl-navbar">
         <div className="navbar-left">
-          <img src={logo} alt="Nexus Logo" className="navbar-logo" />
+          <img src={logo} alt="Nexus Logo" className="gl-navbar-logo" />
         </div>
-        <div className="nav-links">
+        <div className="gl-nav-links">
           <span>My account</span>
-          <span>Messages</span>
         </div>
       </div>
 
-      <div className="content-section">
-        <div className="left-content">
-          <div className="profile-card-row">
-            <div className="profile-card">
-              <User className="profile-icon" />
+      <div className="gl-content-section">
+        <div className="gl-left-content">
+          <div className="gl-profile-card-row">
+            <div className="gl-profile-card">
+              <User className="gl-profile-icon" />
             </div>
-            <div className="user-info">
+            <div className="gl-user-info">
               <p className="gl-profile-name"><span style={{ fontWeight: 500 }}>Name:</span> {name}</p>
               <p className="gl-profile-group"><span style={{ fontWeight: 500 }}>Group Name:</span> {groupName}</p>
               <p className="gl-profile-group"><span style={{ fontWeight: 500 }}>Semigroup Name:</span> {semigroupName}</p>
             </div>
           </div>
-          <h2 className="section-header">Manage your group</h2>
+          <h2 className="gl-section-header">Manage your group</h2>
           <div className="gl-manage-group-columns">
             <div className="gl-manage-group-col">
-              <div className="card" onClick={() => navigate("/")}> 
-                <div className="card-header"><Users className="icon" /><p className="title">Group info</p></div>
-                <p className="description">Explore detailed information about your group members</p>
+              <div className="gl-card" onClick={() => navigate("/")}>
+                <div className="gl-card-header"><Users className="icon" /><p className="title">Group info</p></div>
+                <p className="gl-description">Explore detailed information about your group members</p>
               </div>
-              <div className="card" onClick={() => navigate("/")}> 
-                <div className="card-header"><FileText className="icon" /><p className="title">Essential data</p></div>
-                <p className="description">See information about the ongoing forms and polls.</p>
+              <div className="gl-card" onClick={() => navigate("/")}>
+                <div className="gl-card-header"><FileText className="icon" /><p className="title">Essential data</p></div>
+                <p className="gl-description">See information about the ongoing forms and polls.</p>
               </div>
-              <div className="card" onClick={() => navigate("/glcreate")}> 
-                <div className="card-header"><Pencil className="icon" /><p className="title">Manage and create</p></div>
-                <p className="description">Create and add key information forms, polls, deadlines to assign your group.</p>
+              <div className="gl-card" onClick={() => navigate("/glcreate")}>
+                <div className="gl-card-header"><Pencil className="icon" /><p className="title">Manage and create</p></div>
+                <p className="gl-description">Create and add key information forms, polls, deadlines to assign your group.</p>
               </div>
             </div>
             <div className="gl-manage-group-col">
-              <div className="card" onClick={() => navigate("/glinfo")}> 
-                <div className="card-header"><Info className="icon" /><p className="title">Key Information</p></div>
-                <p className="description">Updates, announcements, and group activity details in one place.</p>
+              <div className="gl-card" onClick={() => navigate("/glinfo")}>
+                <div className="gl-card-header"><Info className="icon" /><p className="title">Key Information</p></div>
+                <p className="gl-description">Updates, announcements, and group activity details in one place.</p>
               </div>
-              <div className="card" onClick={() => navigate("/gldocs")}> 
-                <div className="card-header"><FileText className="icon" /><p className="title">Essential Documents</p></div>
-                <p className="description">Download important files shared within your group.</p>
+              <div className="gl-card" onClick={() => navigate("/gldocs")}>
+                <div className="gl-card-header"><FileText className="icon" /><p className="title">Essential Documents</p></div>
+                <p className="gl-description">Download important files shared within your group.</p>
               </div>
-              <div className="card" onClick={() => navigate("/glforms")}> 
-                <div className="card-header"><List className="icon" /><p className="title">Forms</p></div>
-                <p className="description">Fill out and manage forms assigned to your group.</p>
+              <div className="gl-card" onClick={() => navigate("/glforms")}>
+                <div className="gl-card-header"><List className="icon" /><p className="title">Forms</p></div>
+                <p className="gl-description">Fill out and manage forms assigned to your group.</p>
               </div>
-              <div className="card" onClick={() => navigate("/glpolls")}> 
-                <div className="card-header"><List className="icon" /><p className="title">Polls</p></div>
-                <p className="description">Participate in polls and help your group make decisions.</p>
+              <div className="gl-card" onClick={() => navigate("/glpolls")}>
+                <div className="gl-card-header"><List className="icon" /><p className="title">Polls</p></div>
+                <p className="gl-description">Participate in polls and help your group make decisions.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="right-content">
-          <div className="profile-info-box">
+        <div className="gl-right-content">
+          <div className="gl-profile-info-box">
             <p>{sysAdminName}</p>
             <p>Semigroup coordinator name</p>
             <p>{secretary}</p>
           </div>
-          <div className="notifications">
-            <p className="section-title">Notifications</p>
+          <div className="gl-notifications">
+            <p className="gl-section-title">Notifications</p>
             {notifications.length === 0 ? (
               <p style={{ marginTop: "1rem" }}>No notifications yet.</p>
             ) : (
@@ -191,10 +190,10 @@ const GroupLeaderPage = () => {
                   default: Icon = Info;
                 }
                 return (
-                  <div key={notif.id} className="notification-item">
+                  <div key={notif.id} className="gl-notification-item">
                     <Icon className="icon" />
                     <span>
-                      {notif.message} <span className="notif-time">({getTimeAgo(notif.created_at)})</span>
+                      {notif.message} <span className="gl-notif-time">({getTimeAgo(notif.created_at)})</span>
                     </span>
                   </div>
                 );
@@ -203,29 +202,29 @@ const GroupLeaderPage = () => {
           </div>
 
           {totalPages > 1 && (
-            <div className="pagination-controls">
+            <div className="gl-pagination-controls">
               <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Previous</button>
               <span>Page {currentPage} of {totalPages}</span>
               <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>Next</button>
             </div>
           )}
 
-          <div className="timeline">
+          <div className="gl-timeline">
             {loadingDeadlines ? (
               <div className="timeline-loading">
-                <p className="timeline-title">Timeline</p>
+                <p className="gl-timeline-title">Timeline</p>
                 <p style={{ marginTop: "1rem", color: "#999" }}>Loading deadlines...</p>
               </div>
             ) : deadlines.length === 0 ? (
-              <div className="timeline-empty">
-                <p className="timeline-title">Timeline</p>
+              <div className="gl-timeline-empty">
+                <p className="gl-timeline-title">Timeline</p>
                 <p style={{ marginTop: "1rem", color: "#999" }}>
                   ✅ No upcoming deadlines. You're all caught up!
                 </p>
               </div>
             ) : (
               <>
-                <div className="timeline-primary">
+                <div className="gl-timeline-primary">
                   <p><strong>Now:</strong> {`${deadlines[0].type}: ${deadlines[0].title}`}</p>
                   <p><strong>Due:</strong> {new Date(deadlines[0].due_date).toLocaleDateString("en-GB")}</p>
                   <p><strong>Time remaining:</strong> {(() => {
@@ -236,8 +235,8 @@ const GroupLeaderPage = () => {
                   })()}</p>
                 </div>
 
-                <div className="timeline-body">
-                  <p className="timeline-title">Timeline</p>
+                <div className="gl-timeline-body">
+                  <p className="gl-timeline-title">Timeline</p>
                   <p>All due @ 11:59 PM</p>
                   {deadlines.map((d, index) => {
                     const dateObj = new Date(d.due_date);
@@ -245,8 +244,8 @@ const GroupLeaderPage = () => {
                     const dayNum = dateObj.getDate();
                     const action = d.type.toLowerCase() === "poll" ? "Participate in poll" : "Upload a form";
                     return (
-                      <div className="timeline-event" key={index}>
-                        <Calendar className="timeline-icon" />
+                      <div className="gl-timeline-event" key={index}>
+                        <Calendar className="gl-timeline-icon" />
                         <strong>{day} {dayNum}</strong> – {action}
                       </div>
                     );

@@ -70,10 +70,16 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   position: relative;
-  height: 72px; /* fixed height for navbar */
+  height: 72px;
 }
 
 .navbar-logo {
+  /* position: absolute;
+  top: 1.5%;
+  left: 1%;
+  border-radius: 10px;
+  width: 7%;
+  z-index: 1000; */
   width: 100px;
   height: 100px;
   border-radius: 20px;
@@ -96,21 +102,30 @@ html, body {
 
 /* circle with pfp */
 .profile-card {
-  width: 90px;
-  height: 90px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: white;
+  background: #f6f0fa;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: -2.7rem;
 }
 
-.profile-icon {
-  width: 48px;
-  height: 48px;
+.profile-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.2rem;
+  margin-bottom: 1rem;
 }
+
+.profile-icon {
+  width: 70px;
+  height: 70px;
+}
+
 
 /* name, group name and semigroup name */
 .user-info {
@@ -165,19 +180,29 @@ html, body {
 }
 
 /* Read, key info, notif and deadlines */
-.left-content, .right-content {
+
+.left-content {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: none;
+}
+
+.right-content {
   display: flex;
   flex-direction: column;
   min-width: 0;
   max-width: none;
 }
 
-/* Read, complete and submit */
 .section-header {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   color: #333;
+  text-align: left;
 }
 
 /* grid with key info, ess docs, forms,polls */
@@ -194,26 +219,15 @@ html, body {
 
 /* individual card header */
 .card-header {
+  gap: 0.5rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   font-weight: bold;
-  font-size: 1.1rem;
 }
 
 /* individual card */
-.card {
-  width: 100%;
-  aspect-ratio: 2.5/1;
-  min-height: 110px;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  box-sizing: border-box;
-}
+
 
 .card:hover {
   box-shadow: 0 4px 12px rgba(138, 77, 223, 0.15);
@@ -224,6 +238,7 @@ html, body {
   font-size: 0.95rem;
   color: #444;
 }
+
 
 .card .icon {
   width: 24px;
@@ -248,11 +263,7 @@ html, body {
   margin-top: 0 !important;
 }
 
-.section-title {
-  font-weight: bold;
-  color: #8a4ddf;
-  margin-bottom: 0.5rem;
-}
+
 
 .notification-item {
   display: flex;
@@ -281,27 +292,16 @@ html, body {
 .timeline-title {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 /* Main timeline content */
-.timeline-body {
-  padding: 2rem 0.5rem;
-  text-align: center;
-}
+
 
 /* Styling for the event list}*/
-.timeline-event {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 
-.timeline-icon {
-  width: 20px;
-  height: 20px;
-  color: #8a4ddf;
-}
+
+
 
 .timeline-date-row {
   display: flex;
@@ -412,21 +412,8 @@ html, body {
   flex-shrink: 0;
 }
 
-.profile-card {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: #f6f0fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-}
 
-.profile-icon {
-  width: 70px;
-  height: 70px;
-}
+
 
 .user-info {
   display: flex;
@@ -453,13 +440,7 @@ html, body {
   margin-bottom: 0 !important;
 }
 
-.section-header {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.7rem;
-  color: #333;
-  text-align: left;
-}
+
 
 .content-section {
   display: grid;
@@ -468,14 +449,7 @@ html, body {
   align-items: end;
 }
 
-.left-content {
-  flex: 2.5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  max-width: none;
-}
+
 
 .card-grid {
   display: grid;
@@ -500,25 +474,20 @@ html, body {
   font-size: 1.1rem;
   min-width: 260px;
   max-width: 420px;
-  min-height: 120px;
+  min-height: 110px;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center;
+  height: 100%;
+  aspect-ratio: 2.5/1;
 }
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+
+
 .card .icon {
   width: 32px;
   height: 32px;
 }
-.card .description {
-  font-size: 1.05rem;
-  color: #444;
-}
+
 
 .right-content {
   flex: 1.5;
@@ -548,6 +517,7 @@ html, body {
   font-size: 1.2rem;
 }
 
+
 .timeline-primary {
   background-color: #8a4ddf;
   color: white;
@@ -559,28 +529,29 @@ html, body {
   font-size: 1rem;
 }
 
-.timeline-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
+
 
 .timeline-body {
   padding: 0.7rem 0.3rem 0.2rem 0.3rem;
   text-align: left;
 }
+.timeline-body {
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
 
 .timeline-event {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.4rem;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
   justify-content: flex-start;
   font-size: 0.97rem;
+  display: flex;
+  align-items: center;
 }
+
 .timeline-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: #8a4ddf;
 }
 
@@ -716,12 +687,6 @@ html, body {
   align-items: flex-end;
 }
 
-.profile-card-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.2rem;
-  margin-bottom: 1rem;
-}
 
 
 

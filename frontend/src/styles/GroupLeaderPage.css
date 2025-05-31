@@ -6,7 +6,7 @@
   font-family: 'Inter', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 /* Navbar */
@@ -26,17 +26,17 @@
 /* Logo */
 .gl-navbar-logo {
   position: absolute;
-  top: 1%;
-  left: 0.5%;
+  top: 1.5%;
+  left: 1%;
   border-radius: 10px;
-  width: 5.5%;
+  width: 7%;
   z-index: 1000;
 }
 
 /* Navigation Links */
-.navbar .nav-links {
+.gl-navbar .gl-nav-links {
   margin-left: auto;
-  margin-right: 150rem; /* push 'My account' and 'Messages' further right */
+  margin-right: 80rem; /* push 'My account' and 'Messages' further right */
   display: flex;
   gap: 2rem;
   font-size: 1.1rem;
@@ -45,41 +45,21 @@
 }
 
 /* Profile Section */
-.profile-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
 
-.profile-container {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  justify-content: center;
-}
 
-.profile-card {
-  margin-top: 10px;
-  margin-left: -160px; /* Adjust this value as needed */
-}
-
-.user-info {
+.gl-user-info {
   display: flex;
   flex-direction: column;
   font-weight: bold;
   font-size: 1.1rem;
-  margin-top: 60px;
+  margin-top: 10px;
   margin-left: 1rem;
   align-items: flex-start;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.profile-info-box {
+.gl-profile-info-box {
   width: 100%;
   max-width: 440px;
   min-width: 0;
@@ -97,17 +77,21 @@
   padding-top: 0 !important;
 }
 
+.gl-profile-icon {
+  width: 70px;
+  height: 70px;
+}
+
 /* Main Content */
 .gl-content-section {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
   align-items: flex-start;
-  flex-grow: 1;
   width: 100%;
-  max-width: 100%;
-  margin-top: 1%;
-  gap: 10%;
-  max-height: 55vh;
 }
 
 /* Left Content */
@@ -119,149 +103,122 @@
   flex: 1;
 }
 
-/* Section Title */
-.gl-section-header {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-left: 15%;
-  text-align: left;
-  margin-bottom: 2%;
-  color: #333;
-  grid-column: span 2;
-}
-
-/* Individual Cards */
-.gl-card-grid {
-  display: grid;
-  margin-left: 30%;
-  grid-template-columns: repeat(2, 2fr);
-  gap: 5%;
-  align-items: start;
-}
-
-/* General card styles */
-.gl-card {
-  background: white;
-  padding: 8%;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.gl-left-content{
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  flex: 2.5;
   display: flex;
   flex-direction: column;
-  gap: 5%;
-
+  max-width: none;
 }
 
-/* First column cards */
-.gl-card:nth-child(1){
-  width: 260%;
-  margin-top: -15%;
-  margin-bottom: 10%;
-}
-.gl-card:nth-child(3){
-  width: 260%;
-  margin-top: -15%;
-  margin-bottom: 10%;
-}
-.gl-card:nth-child(5) {
-  width: 260%;
-  margin-top: -15%;
-  margin-bottom: 10%;
+.gl-section-header {
+  margin-top: -1.4rem ;
+  margin-left: -29rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: -1rem;
+  color: #333;
+  text-align: left;
 }
 
-/* Second column cards */
-.gl-card:nth-child(2){
-  width: 230%;
-  margin-left: 190%;
-  margin-top: -40%;
-  line-height: 1;
-  padding-top: 0.01%;
-  padding-bottom: 0.01%;
-}
-.gl-card:nth-child(4){
-  width: 230%;
-  margin-left: 190%;
-  margin-top: -65%;
-  line-height: 1;
-  padding-top: 0.01%;
-  padding-bottom: 0.01%;
-}
-.gl-card:nth-child(6) {
-  width: 230%;
-  margin-left: 190%;
-  margin-top: -77%;
-  line-height: 1;
-  padding-top: 0.01%;
-  padding-bottom: 0.01%;
-
-}
-.gl-card:nth-child(7) {
-  grid-column: 2; /* Place it in the second column */
-  width: 230%; /* Adjust width to match second-column cards */
-  margin-left: 190%;
-  margin-top: -115%;
-  line-height: 1;
-  padding-top: 0.01%;
-  padding-bottom: 0.01%;
-
-}
-
-/* Card Header */
 .gl-card-header {
+  gap: 0.5rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
-  gap: 6%;
   font-weight: bold;
-  font-size: 1.4em;
 }
 
-/* Card Description */
-.gl-card .description {
-  margin-top: 0.5%;
-  font-size: 1.3em;
-  color: #333;
-  line-height: 1.5;
-}
+
+
 
 .gl-card .icon {
   width: 2vw;
   height: 70%;
 }
 
+
+.gl-pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.gl-pagination-controls button {
+  background-color: #8a4ddf;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gl-pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+
 /* Right Content */
 .gl-right-content {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
   align-items: stretch;
   gap: 2rem;
+  padding-top: 6rem; /* pushes notifications lower */
 }
 
-/* Notifications */
-.notifications {
-  margin-top: 8rem;
+.gl-notifications {
   background: white;
   padding: 2%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
+  min-width: 380px;
+  max-width: 380px;
+  min-height: 120px;
+  max-height: 120px;
+  margin-top: 6rem ;
+  font-size: 0.9rem;
+  margin-bottom: -1.8rem;
 }
 
-.profile-header-row, .profile-card-row {
-  margin-bottom: 0 rem; /* Reduce this value as needed */
+.gl-profile-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.2rem;
+  margin-bottom: 1rem;
 }
 
-.section-header {
-  margin-top: -1.8rem !important;
-  margin-left: -29rem;
+.gl-profile-card {
+  margin-top: -0.5rem;
+  margin-left: -140px; /* Adjust this value as needed */
+  margin-bottom: 0 rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #f6f0fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .gl-section-title {
   font-size: 1.4em;
   font-weight: bold;
   color: #8a4ddf;
-  margin-top: 1%;
-  margin-bottom: 10px;
+  margin-top: 1.5%;
+  margin-bottom: 1rem;
 }
 
 .gl-notification-item {
@@ -273,100 +230,62 @@
   margin-bottom: 5px;
 }
 
-/* Timeline */
-.timeline {
+
+.gl-timeline {
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-}
-
-/* Timeline Header */
-.gl-timeline-header {
-  background-color: #914BEB;
-  color: white;
-  font-weight: bold;
-  width: 100%;
-  padding: 3%;
-  border-radius: 10px;
-  font-size: 1.3em;
-}
-
-/* Timeline Body */
-.gl-timeline-body {
-  padding: 2%;
+  margin-top: 1rem !important;
   text-align: center;
 }
 
 .gl-timeline-title {
-  font-size: 1.2em;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 1vh;
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
 }
 
-/* Timeline Event */
+.gl-timeline-primary {
+  background-color: #8a4ddf;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.gl-timeline-body {
+  padding: 0.1rem 0.3rem 0.2rem 0.3rem;
+  text-align: center;
+}
+
+.gl-timeline-body p:nth-child(2) {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
 .gl-timeline-event {
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: flex-start;
+  font-size: 0.97rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  margin: 5% 2%;
 }
 
 .gl-timeline-icon {
-  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  color: #8a4ddf;
 }
 
-/* --- Group Leader Specific Styles --- */
-
-/* Administration Section */
-.gl-admin-section {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15%;
-  margin-bottom: 5%;
-}
-
-.gl-admin-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 2%;
-}
-
-/* Admin Card Grid */
-.gl-admin-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr); /* Two columns */
-  gap: 5%;
-}
-
-/* Admin Cards */
-.gl-admin-card {
-  width: 270%;
-  background: white;
-  padding: 10%;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 5%;
-  margin-bottom: -75%;
-}
-
-.gl-admin-card-header {
-  display: flex;
-  align-items: center;
-  gap: 6%;
-  font-weight: bold;
-  font-size: 1.4em;
-}
-
-.gl-admin-card .description {
-  margin-top: 0.5%;
-  font-size: 1.3em;
-  color: #333;
-  line-height: 1.5;
-}
 
 .gl-manage-group-columns {
   display: flex;
@@ -393,24 +312,36 @@
   margin-top: calc((140px + 1rem) / 2);
 }
 
-.card {
-  width: 320px;
-  min-width: 320px;
-  max-width: 320px;
-  height: 120px;
-  min-height: 120px;
+.gl-card {
+  height: 100%;
+  min-height: 110px;
   max-height: 120px;
+  width: 100%;
+  min-width: 260px;
+  max-width: 420px;
+  background: white;
+  padding: 3rem 1.7rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(138,77,223,0.07);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  gap: -2rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  align-items: flex-start;
+  font-size: 1rem;
+  aspect-ratio: 2.5/1;
 }
 
-.left-content {
-  align-items: center;
-  width: 100%;
+.gl-card .gl-description {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 0.3rem; /* remove extra space above content */
+  line-height: 1.3;
 }
 
 .main-wrapper {
@@ -421,79 +352,11 @@
   margin-top: 5rem;
 }
 
-.content-section {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 2rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: flex-start;
-  width: 100%;
+.gl-notif-time {
+  font-size: 0.7rem;
+  color: gray;
+  margin-left: 4px;
 }
 
-.left-content, .right-content {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-}
-.right-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-  align-items: stretch;
-  gap: 2rem;
-  padding-top: 4rem; /* pushes notifications lower */
-}
 
-.timeline {
-  margin-top: 1rem !important;
-  text-align: center;
-}
 
-.timeline-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: -0.5rem;
-  margin-bottom: 0.4rem;
-  text-align: center;
-}
-
-.timeline-body p:nth-child(2) {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: -0.5rem;
-  margin-bottom: 1rem;
-}
-
-.notification-item {
-  font-size: 0.9rem;
-}
-
-.notifications {
-  width: 380px;
-  min-width: 380px;
-  max-width: 380px;
-  height: 120px;
-  min-height: 120px;
-  max-height: 120px;
-  margin-top: 9rem !important; /* lower it in the column */
-  font-size: 0.9rem; /* make notification text smaller */
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 0.1rem; /* reduce space below title */
-}
-
-.card .description {
-  font-size: 0.95rem;
-  color: #444;
-  margin-top: 0; /* remove extra space above content */
-  line-height: 1.3;
-}
